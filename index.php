@@ -1,16 +1,42 @@
-<?PHP
-include 'includes/head.php';
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<?php include 'includes/head.php'; ?>
 
-?>
-<header>
-	<h1>HELLO WORLD!</h1>
-</header>
-<main>
-	<p>
-		This is the VERY first page of the Simpson CIS Capstone.
-	</p>
-	<p>
-		1st change.
-	</p>
-
-</main>
+	</head>
+	<body>
+		<section class="topbar">
+		  <div class="search-container">
+		    <form action="/action_page.php">
+		      <input type="text" placeholder="Search.." name="search">
+		      <button type="submit"><i class="fa fa-search"></i></button>
+		    </form>
+		  </div>
+		 </section>
+		<header class="header">
+			<h1>
+				<a href="index.php"><img id="logo" src="images/logo.png"></a>
+			</h1>
+			<?php include "includes/navbar.php" ?>
+		</header>
+		<main>
+			<section>
+				<h2>Dashboard</h2>
+			</section>
+			<section id="dashboard">
+				<ul>
+					<li>
+						<a class="#" href="#">Class 1</a>
+					</li>
+					<li>
+						<a class="#" href="#">Class 2</a>
+					</li>
+					<li>
+						<a class="#" href="#">Class 3</a>
+					</li>					
+				</ul>
+			</section>
+		</main>
+	</body>
+</html>
