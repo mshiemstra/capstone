@@ -67,7 +67,7 @@ body, .content {
 }
 
 main {
-	height: auto;
+	min-height: 350px;
 	width: 100%;
 	margin-top: 1%;
 	padding: 2%;
@@ -240,4 +240,8 @@ th {
 
 iframe {
 	width: 100%;
+}
+
+#student_list tr td {
+	width: 10%;
 }

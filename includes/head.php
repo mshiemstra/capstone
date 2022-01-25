@@ -8,3 +8,4 @@
 			<link rel="stylesheet" href="https://use.typekit.net/uho4dic.css">
 			<link rel="stylesheet" type="text/css" href="css/styles.css">
 			<script src="js/functions.js"></script>
+			<?php include 'db.php'; ?>
