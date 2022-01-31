@@ -68,10 +68,11 @@ body, .content {
 
 main {
 	min-height: 350px;
-	width: 100%;
+	width: 96%;
 	margin-top: 1%;
 	padding: 2%;
-	background:  #FFF;
+	background: #FFF;
+	overflow-x: scroll ;
 }
 
 .content {
@@ -115,7 +116,7 @@ h2 {
 
 nav {
 	height: 40px;
-	width:45%;
+	width:46%;
 	float:right;
 	margin-top: 2%;
 }
@@ -242,6 +243,15 @@ iframe {
 	width: 100%;
 }
 
-#student_list tr td {
-	width: 10%;
+
+#student_list .th {
+	text-decoration: underline;
+}
+
+#student_list, #teachers_list {
+	width: 125%;
+}
+
+#classes_list {
+	width: 50%;
 }
