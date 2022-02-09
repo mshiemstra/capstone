@@ -1,0 +1,81 @@
+body {
+	color: #444444;
+	font-family: Tahoma,Arial,Helvetica;
+	background-color: #600;
+}
+
+#container {
+	min-height:365px;
+	width:40%;
+	margin-top: 48px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+	background-color: #FFF;
+}
+
+#contentLayer {
+	height: 5px;
+}
+
+#content {
+	min-height:350px;
+	width:97%;
+	margin-top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+	background-color: #FFF;
+	border-radius: 15px;
+	border: 2px solid lightgrey;
+}
+
+header {
+	text-align: center;
+}
+
+table {
+	width:85%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.required {
+	color:red;
+}
+
+input[type=text], input[type=email] {
+	width:100%;
+	background-color: lightyellow;
+}
+
+input[type=submit], input[type=reset] {
+	border-radius: 5px;
+	border: 1px solid #444444;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+input[type=submit]:focus, input[type=reset]:focus {
+	outline: 0;
+}
+
+input[type=submit]:hover, input[type=reset]:hover {
+	background-color: lightgrey;
+}
+
+#error1, #error2, #error3, #error4, 
+#error5, #error6, #error7, #error8 {
+	color:red;
+} 
+
+.output {
+	width:50%;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#spacer {
+	height:5px;
+}

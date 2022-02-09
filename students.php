@@ -11,6 +11,7 @@
 		    <form action="/action_page.php">
 		      <input type="text" placeholder="Search.." name="search">
 		      <button type="submit"><i class="fa fa-search"></i></button>
+		      <script src="js/formValidation.js"></script>
 		    </form>
 		  </div>
 		 </section>
@@ -23,7 +24,8 @@
 		<main>
 
 			<table id="student_list">
-				<tr class="th">					
+				<tr class="th">
+					<td></td>					
 					<td>Student ID</td>
 					<td>First Name</td>
 					<td>Last Name</td>
@@ -41,7 +43,10 @@
 
 					if ($result->num_rows > 0) {				  
 					  while($row = mysqli_fetch_array($result)) {
-					    echo "<tr><td>" . $row["student_id"] . "</td><td>" . $row["student_fName"] . "</td><td>" . $row["student_lName"] . "</td><td>" . $row["student_street1"] . "</td><td>" . $row["student_street2"] . "</td><td>" . $row["student_city"] . "</td><td>" . $row["student_state"] . "</td><td>" . $row["student_zipcode"] . "</td><td>" . $row["student_phone"] . "</td><td>" . $row["student_email"] . "</td></tr>";
+					    echo "<tr>";
+					    $link="delete.php?id=" . $row['student_id'];
+					    echo "<td><a id='delete' href='$link'>Delete</a></td>";
+					    echo "<td id='student_id'>" . $row["student_id"] . "</td><td>" . $row["student_fName"] . "</td><td>" . $row["student_lName"] . "</td><td>" . $row["student_street1"] . "</td><td>" . $row["student_street2"] . "</td><td>" . $row["student_city"] . "</td><td>" . $row["student_state"] . "</td><td>" . $row["student_zipcode"] . "</td><td>" . $row["student_phone"] . "</td><td>" . $row["student_email"] . "</td></tr>";
 					  }
 					} 
 					else {

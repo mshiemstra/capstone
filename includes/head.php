@@ -8,4 +8,6 @@
 			<link rel="stylesheet" href="https://use.typekit.net/uho4dic.css">
 			<link rel="stylesheet" type="text/css" href="css/styles.css">
 			<script src="js/functions.js"></script>
+			<script src="js/formValidation.js"></script>
+			<script src="js/student_regex_restriction.js"></script>
 			<?php include 'db.php'; ?>

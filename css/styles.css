@@ -248,6 +248,10 @@ iframe {
 	text-decoration: underline;
 }
 
+#delete .th {
+	text-decoration: none;
+}
+
 #student_list, #teachers_list {
 	width: 125%;
 }
