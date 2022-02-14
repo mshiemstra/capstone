@@ -1,7 +1,6 @@
-alert('working');
   
 
-  function trimString() {
+ /* function trimString() {
         
           let student_fNameTrim = document.getElementById("student_fName");
       /*    let lastnameTrim = document.getElementById("lastname");
@@ -9,12 +8,12 @@ alert('working');
           let address2Trim = document.getElementById("address2");
           let cityTrim = document.getElementById("city");
           let zipTrim = document.getElementById("zip");
-          let emailTrim = document.getElementById("email"); */
+          let emailTrim = document.getElementById("email");
+          */
+        //  student_fNameTrim.value = student_fNameTrim.value.replace(/^\s+/,"");        
+         // student_fNameTrim.value = student_fNameTrim.value.replace(/\s+$/,"");
           
-          student_fNameTrim.value = student_fNameTrim.value.replace(/^\s+/,"");        
-          student_fNameTrim.value = student_fNameTrim.value.replace(/\s+$/,"");
-          
-      /*    lastnameTrim.value = lastnameTrim.value.replace(/^\s+/,"");        
+        /*  lastnameTrim.value = lastnameTrim.value.replace(/^\s+/,"");        
           lastnameTrim.value = lastnameTrim.value.replace(/\s+$/,"");
           
           address1Trim.value = address1Trim.value.replace(/^\s+/,"");        
@@ -30,8 +29,34 @@ alert('working');
           zipTrim.value = zipTrim.value.replace(/\s+$/,"");
 
           emailTrim.value = emailTrim.value.replace(/^\s+/,"");        
-          emailTrim.value = emailTrim.value.replace(/\s+$/,""); */
+          emailTrim.value = emailTrim.value.replace(/\s+$/,"");*/
+//  }
+
+/*
+function student_id() {
+      let student_id = document.getElementById("student_id").value;
+      
+      let patt = new RegExp(/^[0-9]*$/);
+      let res = patt.exec(student_fName);
+     
+      if(student_id == "" || student_id == null || student_id == "null" || student_id == undefined || student_id == "undefined" || res == null) {
+
+        document.getElementById("error2").innerHTML = "Please enter a valid ID";
+        document.getElementById("student_id").style.border = "1px solid red";
+        return validForm = false;
+      }
+      else {
+        document.getElementById("error1").innerHTML = "";
+        document.getElementById("student_id").style.borderTop = "2px solid #BDBDBD";
+        document.getElementById("student_id").style.borderLeft = "1px solid #BDBDBD";
+        document.getElementById("student_id").style.borderBottom = "1px solid #BDBDBD";
+        document.getElementById("student_id").style.borderRight = "1px solid #BDBDBD";
+        
+        return validForm = true;
+      } 
   }
+
+
 
   function student_firstName() {
       let student_fName = document.getElementById("student_fName").value;
@@ -56,6 +81,8 @@ alert('working');
       } 
   }
 
+*/
+  
 
 /*  function lastName() {
 

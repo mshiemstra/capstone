@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) { 
+/*document.addEventListener("DOMContentLoaded", function(event) { 
 	document.getElementById('display').onclick = function(){
 		var student_grade = new Array();
 		var gradeList = document.querySelectorAll('.grade');
@@ -100,4 +100,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.getElementById('average').innerHTML = "";
 	}
 });
-
+*/

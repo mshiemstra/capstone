@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		
 		<?php include 'includes/head.php'; ?>
 	</head>
 	<body>
@@ -30,7 +29,7 @@
 		            </tr>
 					<tr>
 						<td><label>Student ID</label></td>
-						<td><input type="number" name="student_id" required onblur="trimString(this.value); student_id();"></td>
+						<td><input type="number" name="student_id" required onblur="trimString(); student_id();"></td>
 						<td><?php echo $student_id_error; ?></td>
 					</tr>
 					<tr>
@@ -40,7 +39,7 @@
 		            </tr>
 					<tr>
 						<td><label>First Name</label></td>
-						<td><input type="text" name="student_fName" required onblur="trimString(this.value); student_firstname();"></td>
+						<td><input type="text" id="student_fName" name="student_fName" required onblur="trimString(); student_firstName();"></td>
 						<td><?php echo $student_fName_error ?></td>
 					</tr>
 					<tr>
@@ -50,7 +49,7 @@
 		            </tr>
 					<tr>
 						<td><label>Last Name</label></td>
-						<td><input type="text" name="student_lName" required onblur="trimString(this.value); student_lName();"></td>
+						<td><input type="text" id="student_lName" name="student_lName" required onblur="trimString(); student_lName();"></td>
 						<td><?php echo $student_lName_error ?></td>
 					</tr>
 					<tr>
@@ -60,7 +59,7 @@
 		            </tr>
 					<tr>
 						<td><label>Street Address</label></td>
-						<td><input type="text" name="student_street1" required onblur="trimString(this.value); student_streetOne();"></td>
+						<td><input type="text" id="student_street1" name="student_street1" required onblur="trimString(); student_streetOne();"></td>
 						<td><?php echo $student_street1_error ?></td>
 					</tr>
 					<tr>
@@ -70,7 +69,7 @@
 		            </tr>
 					<tr>
 						<td><label>Bldg/Ste/Lot #</label></td>
-						<td><input type="text" name="student_street2" onblur="trimString(this.value); student_streetTwo();"></td>						
+						<td><input type="text" id="student_street2" name="student_street2" onblur="trimString(); student_streetTwo();"></td>						
 					</tr>
 					<tr>
 		                <td colspan="3">
@@ -79,7 +78,7 @@
 		            </tr>
 					<tr>
 						<td><label>City</label></td>
-						<td><input type="text" name="student_city" required onblur="trimString(this.value); student_cityName();"></td>
+						<td><input type="text" id="student_city" name="student_city" required onblur="trimString(); student_cityName();"></td>
 						<td><?php echo $student_city_error ?></td>
 					</tr>
 					<tr>
@@ -90,7 +89,7 @@
 					<tr>
 						<td><label>State</label></td>
 						<td>
-		                <select id="state" name="state"  onblur="student_stateName();">
+		                <select id="student_state" name="state"  onblur="student_stateName();">
 		                    <option value="" selected>Please Select State:</option>
 		                    <option value="AL">Alabama</option>
 		                    <option value="AK">Alaska</option>
@@ -154,7 +153,7 @@
 		            </tr>
 					<tr>
 						<td><label>Zipcode</label></td>
-						<td><input type="number" name="student_zipcode" required onblur="trimString(this.value); student_zipcode();"></td>
+						<td><input type="number" id="student_zipcode" name="student_zipcode" required onblur="trimString(); student_zipcode();"></td>
 						<td><?php echo $student_zipcode_error ?></td>
 					</tr>
 					<tr>
@@ -164,7 +163,7 @@
 		            </tr>
 					<tr>
 						<td><label>Phone Number</label></td>
-						<td><input type="text" name="student_phone" placeholder="(###)###-####" required onblur="trimString(this.value); student_phone();"></td>
+						<td><input type="text" id="student_phone" name="student_phone" placeholder="(###)###-####" required onblur="trimString(); student_phone();"></td>
 						<td><?php echo $student_phone_error ?></td>
 					</tr>
 					<tr>
@@ -174,7 +173,7 @@
 		            </tr>
 					<tr>
 						<td><label>Email Address</label></td>
-						<td><input type="email" name="student_email" required onblur="trimString(this.value); validateEmail();"></td>
+						<td><input type="email" id="student_email" name="student_email" required onblur="trimString(); validateEmail();"></td>
 						<td><?php echo $student_email_error ?></td>
 					</tr>
 					<tr>

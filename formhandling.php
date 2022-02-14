@@ -7,7 +7,8 @@ $student_id = $student_fName = $student_lName = $student_street1 = $student_stre
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
   
- 
+ 	$valid = true;
+
 	if(!preg_match("/^[0-9]*$/",$student_id)) {
 	    $student_id_error = "Only numbers are allowed";
 	    $valid = false;
@@ -19,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 	}
 	else {
 	    $student_id = test_input($_POST["student_id"]);
-	    $valid = true;
 	}
 
 
@@ -50,8 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $valid = false;
   }
   else {
-    $student_lName = test_input($_POST["student_lName"]);
-    $valid = true;   
+    $student_lName = test_input($_POST["student_lName"]); 
   }
   
 
@@ -63,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   }
   else {
     $student_street1 = test_input($_POST["student_street1"]);
-    $valid = true;
   }
   
 
@@ -90,7 +88,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   }
   else {
     $student_city = test_input($_POST["student_city"]);
-    $valid = true;
   }
   
     
@@ -106,7 +103,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   }
   else {
     $student_state = test_input($_POST["student_state"]);
-    $valid = true;   
   }
   
 
@@ -122,7 +118,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   }
   else {
     $student_zipcode = test_input($_POST["student_zipcode"]);
-    $valid = true;
   }
   
 
@@ -151,7 +146,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   }
   else {
     $student_email = test_input($_POST["student_email"]);
-    $valid = true;       
   }
   
 }

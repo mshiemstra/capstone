@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
     var student_city_restrict = document.getElementById('student_city');
     var student_zipcode_restrict = document.getElementById('student_zipcode');
     var student_email_restrict = document.getElementById('student_email');
+    var student_phone_restrict = document.getElementById('student_phone');
 
     student_fName_restrict.onkeypress = student_fName_restrict.onpaste = checkInputLetters;
     student_lName_restrict.onkeypress = student_lName_restrict.onpaste = checkInputLetters;
@@ -61,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
 
-    function checkInputstudent_Email(e) {
+    function checkInputEmail(e) {
         var e = e || event;
         var char = e.type == 'keypress' 
             ? String.fromCharCode(e.keyCode || e.which) 
