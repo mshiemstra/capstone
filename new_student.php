@@ -19,7 +19,7 @@
 			<?php include "includes/navbar.php" ?>
 		</header>
 		<main>
-			<?php include 'formhandling.php'; ?>
+			
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 				<table>
 					<tr>
@@ -29,12 +29,12 @@
 		            </tr>
 					<tr>
 						<td><label>Student ID</label></td>
-						<td><input type="number" name="student_id" required onblur="trimString(); student_id();"></td>
+						<td><input type="text" name="student_id" onblur="trimString(); student_id();"></td>
 						<td><?php echo $student_id_error; ?></td>
 					</tr>
 					<tr>
 		                <td colspan="3">
-		            		<span id="error2"></span>
+		            		<span id="student_error2"></span>
 		            	</td>
 		            </tr>
 					<tr>
@@ -44,7 +44,7 @@
 					</tr>
 					<tr>
 		                <td colspan="3">
-		            		<span id="error3"></span>
+		            		<span id="student_error3"></span>
 		            	</td>
 		            </tr>
 					<tr>
@@ -54,7 +54,7 @@
 					</tr>
 					<tr>
 		                <td colspan="3">
-		            		<span id="error4"></span>
+		            		<span id="student_error4"></span>
 		            	</td>
 		            </tr>
 					<tr>
@@ -64,7 +64,7 @@
 					</tr>
 					<tr>
 		                <td colspan="3">
-		            		<span id="error2"></span>
+		            		<span id="student_error2"></span>
 		            	</td>
 		            </tr>
 					<tr>
@@ -73,7 +73,7 @@
 					</tr>
 					<tr>
 		                <td colspan="3">
-		            		<span id="error5"></span>
+		            		<span id="student_error5"></span>
 		            	</td>
 		            </tr>
 					<tr>
@@ -83,7 +83,7 @@
 					</tr>
 					<tr>
 		                <td colspan="3">
-		            		<span id="error6"></span>
+		            		<span id="student_error6"></span>
 		            	</td>
 		            </tr>
 					<tr>
@@ -148,7 +148,7 @@
 					</tr>
 					<tr>
 		                <td colspan="3">
-		            		<span id="error7"></span>
+		            		<span id="student_error7"></span>
 		            	</td>
 		            </tr>
 					<tr>
@@ -158,7 +158,7 @@
 					</tr>
 					<tr>
 		                <td colspan="3">
-		            		<span id="error8"></span>
+		            		<span id="student_error8"></span>
 		            	</td>
 		            </tr>
 					<tr>
@@ -168,7 +168,7 @@
 					</tr>
 					<tr>
 		                <td colspan="3">
-		            		<span id="error9"></span>
+		            		<span id="student_error9"></span>
 		            	</td>
 		            </tr>
 					<tr>

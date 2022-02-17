@@ -3,13 +3,13 @@
 //define variables and set to empty values
 $student_id_error = $student_fName_error = $student_lName_error = $student_street1_error = $student_street2_error = $student_city_error = $student_state_error = $student_zipcode_error = $student_phone_error = $student_email_error = "";
 
-$student_id = $student_fName = $student_lName = $student_street1 = $student_street2 = $student_city = $student_state = $student_zipcode = $student_phone = $student_email = $valid = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
   
  	$valid = true;
 
-	if(!preg_match("/^[0-9]*$/",$student_id)) {
+
+	if(!preg_match("/^[0-9]*$/",$_POST['student_id'])) {
 	    $student_id_error = "Only numbers are allowed";
 	    $valid = false;
 	}
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
-  if(!preg_match("/^[a-zA-z ]*$/",$student_fName)) {
+  if(!preg_match("/^[a-zA-z ]*$/",$_POST['student_fName'])) {
     $student_fName_error = "Only letters and white spaces are allowed";
     $valid = false;
   }
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
-  if(!preg_match("/^[a-zA-z ]*$/",$student_lName)) {
+  if(!preg_match("/^[a-zA-z ]*$/",$_POST['student_lName'])) {
     $student_lName_error = "Only letters and white spaces are allowed";
     $valid = false;
   }
@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
  
- if(!preg_match("/^[a-zA-z ]*$/",$student_city)) {
+ if(!preg_match("/^[a-zA-z ]*$/",$_POST['student_city'])) {
     $student_city_error = "Only letters and white spaces are allowed";
     $valid = false;
   }
@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   
     
 
-  if(!preg_match("/^[a-zA-z ]*$/",$student_state)) {
+  if(!preg_match("/^[a-zA-z ]*$/",$_POST['student_state'])) {
     $student_state_error = "Only letters and white spaces are allowed";
     $valid = false;
   }
@@ -107,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   
 
 
-  if(!preg_match("/^[0-9]*$/",$student_zipcode)) {
+  if(!preg_match("/^[0-9]*$/",$_POST['student_zipcode'])) {
     $student_zipcode_error = "Only numbers are allowed";
     $valid = false;
   }
@@ -121,7 +121,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   }
   
 
-
+if(!preg_match('/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/', $_POST['student_phone'])) {
+    $student_phone_error = "Invalid format";
+    $valid = false;
+  }
 
   if(empty($_POST["student_phone"])) {
     $student_phone_error = "Phone Number is required";
@@ -135,7 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
   
-  if(!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/",$student_email)) {
+  if(!preg_match("/([\w\-]+\@[\w\-]+\.[\w\-]+)/",$_POST['student_email'])) {
     $student_email_error = "Invalid email format";
     $valid = false;
   }
