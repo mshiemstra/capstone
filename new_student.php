@@ -90,7 +90,7 @@
 						<td><label>State</label></td>
 						<td>
 		                <select id="student_state" name="state"  onblur="student_stateName();">
-		                    <option value="" selected>Please Select State:</option>
+		                    <option value="" selected>-- Select --</option>
 		                    <option value="AL">Alabama</option>
 		                    <option value="AK">Alaska</option>
 		                    <option value="AZ">Arizona</option>

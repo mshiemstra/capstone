@@ -4,9 +4,11 @@
 $student_id_error = $student_fName_error = $student_lName_error = $student_street1_error = $student_street2_error = $student_city_error = $student_state_error = $student_zipcode_error = $student_phone_error = $student_email_error = "";
 
 
+$valid = true;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
   
- 	$valid = true;
+ 	
 
 
 	if(!preg_match("/^[0-9]*$/",$_POST['student_id'])) {
