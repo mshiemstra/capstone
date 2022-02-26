@@ -23,8 +23,8 @@ input[type=submit]:hover, input[type=reset]:hover {
 	background-color: lightgrey;
 }
 
-#student_error1, #student_error2, #student_error3, #student_error4, 
-#student_error5, #student_error6, #student_error7, #student_error8,
-#student_error9, #student_error10 {
+#teacher_error1, #teacher_error2, #teacher_error3, #teacher_error4, 
+#teacher_error5, #teacher_error6, #teacher_error7, #teacher_error8,
+#teacher_error9, #teacher_error10 {
 	color:red;
 } 

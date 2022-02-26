@@ -1,5 +1,5 @@
 <?php
-	include 'includes/db.php';
+	include '../includes/db.php';
 	$id = $_REQUEST['id'];
 	$id = mysqli_real_escape_string($conn, $id);
 	$sql = "DELETE FROM student WHERE `student_id` = '$id'";	

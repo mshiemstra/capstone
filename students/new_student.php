@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php include 'includes/head.php'; ?>
+		<?php include 'includes/student_head.php'; ?>
 	</head>
 	<body>
 		<section class="topbar">
@@ -14,83 +14,85 @@
 		 </section>
 		<header class="header">
 			<h1>
-				<a href="index.php"><img id="logo" src="images/logo.png"></a>
+				<a href="index.php"><img id="logo" src="../images/logo.png"></a>
 			</h1>
-			<?php include "includes/navbar.php" ?>
+			<?php include "includes/student_navbar.php" ?>
 		</header>
 		<main>
 			
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 				<table>
 					<tr>
-		                <td colspan="3">
-		            		<span id="error1"></span>
+						<td></td>
+		                <td>
+		            		<span id="student_error1"><?php echo $student_id_error ?></span>
 		            	</td>
 		            </tr>
 					<tr>
-						<td><label>Student ID</label></td>
-						<td><input type="text" name="student_id" onblur="trimString(); student_id();"></td>
-						<td><?php echo $student_id_error; ?></td>
+						<td><label>Student ID<span class="required">*</span></label></td>
+						<td><input type="text" id="student_id" name="student_id" required onblur="trimString(); student_idNumber();"></td>
 					</tr>
 					<tr>
-		                <td colspan="3">
-		            		<span id="student_error2"></span>
+						<td></td>
+		                <td>
+		            		<span id="student_error2"><?php echo $student_fName_error ?></span>
 		            	</td>
 		            </tr>
 					<tr>
-						<td><label>First Name</label></td>
+						<td><label>First Name<span class="required">*</span></label></td>
 						<td><input type="text" id="student_fName" name="student_fName" required onblur="trimString(); student_firstName();"></td>
-						<td><?php echo $student_fName_error ?></td>
 					</tr>
 					<tr>
-		                <td colspan="3">
-		            		<span id="student_error3"></span>
+						<td></td>
+		                <td>
+		            		<span id="student_error3"><?php echo $student_lName_error ?></span>
 		            	</td>
 		            </tr>
 					<tr>
-						<td><label>Last Name</label></td>
-						<td><input type="text" id="student_lName" name="student_lName" required onblur="trimString(); student_lName();"></td>
-						<td><?php echo $student_lName_error ?></td>
+						<td><label>Last Name<span class="required">*</span></label></td>
+						<td><input type="text" id="student_lName" name="student_lName" required onblur="trimString(); student_lastName();"></td>
 					</tr>
 					<tr>
-		                <td colspan="3">
-		            		<span id="student_error4"></span>
+						<td></td>
+		                <td>
+		            		<span id="student_error4"><?php echo $student_street1_error ?></span>
 		            	</td>
 		            </tr>
 					<tr>
-						<td><label>Street Address</label></td>
-						<td><input type="text" id="student_street1" name="student_street1" required onblur="trimString(); student_streetOne();"></td>
-						<td><?php echo $student_street1_error ?></td>
+						<td><label>Street Address<span class="required">*</span></label></td>
+						<td><input type="text" id="student_street1" name="student_street1" required onblur="trimString(); student_addressOne();"></td>
 					</tr>
 					<tr>
-		                <td colspan="3">
-		            		<span id="student_error2"></span>
-		            	</td>
-		            </tr>
-					<tr>
-						<td><label>Bldg/Ste/Lot #</label></td>
-						<td><input type="text" id="student_street2" name="student_street2" onblur="trimString(); student_streetTwo();"></td>						
-					</tr>
-					<tr>
-		                <td colspan="3">
+						<td></td>
+		                <td>
 		            		<span id="student_error5"></span>
 		            	</td>
 		            </tr>
 					<tr>
-						<td><label>City</label></td>
-						<td><input type="text" id="student_city" name="student_city" required onblur="trimString(); student_cityName();"></td>
-						<td><?php echo $student_city_error ?></td>
+						<td><label>Bldg/Ste/Lot #</label></td>
+						<td><input type="text" id="student_street2" name="student_street2" onblur="trimString(); student_addressTwo();"></td>						
 					</tr>
 					<tr>
-		                <td colspan="3">
-		            		<span id="student_error6"></span>
+						<td></td>
+		                <td>
+		            		<span id="student_error6"><?php echo $student_city_error ?></span>
 		            	</td>
 		            </tr>
 					<tr>
-						<td><label>State</label></td>
+						<td><label>City<span class="required">*</span></label></td>
+						<td><input type="text" id="student_city" name="student_city" required onblur="trimString(); student_cityName();"></td>
+					</tr>
+					<tr>
+						<td></td>
+		                <td>
+		            		<span id="student_error7"><?php echo $student_state_error ?></span>
+		            	</td>
+		            </tr>
+					<tr>
+						<td><label>State<span class="required">*</span></label></td>
 						<td>
-		                <select id="student_state" name="state"  onblur="student_stateName();">
-		                    <option value="" selected>-- Select --</option>
+		                <select id="student_state" name="student_state"  required onblur="student_stateName();">
+		                    <option value="">--- Select ---</option>
 		                    <option value="AL">Alabama</option>
 		                    <option value="AK">Alaska</option>
 		                    <option value="AZ">Arizona</option>
@@ -143,38 +145,36 @@
 		                    <option value="WY">Wyoming</option>
 		                  </select>
 		                </td>
-		            </tr>
-						<td><?php echo $student_state_error ?></td>
 					</tr>
 					<tr>
-		                <td colspan="3">
-		            		<span id="student_error7"></span>
+						<td></td>
+		                <td>
+		            		<span id="student_error8"><?php echo $student_zipcode_error ?></span>
 		            	</td>
 		            </tr>
 					<tr>
-						<td><label>Zipcode</label></td>
-						<td><input type="number" id="student_zipcode" name="student_zipcode" required onblur="trimString(); student_zipcode();"></td>
-						<td><?php echo $student_zipcode_error ?></td>
+						<td><label>Zipcode<span class="required">*</span></label></td>
+						<td><input type="text" id="student_zipcode" name="student_zipcode" required onblur="trimString(); student_zipCode();"></td>
 					</tr>
 					<tr>
-		                <td colspan="3">
-		            		<span id="student_error8"></span>
+						<td></td>
+		                <td>
+		            		<span id="student_error9"><?php echo $student_phone_error ?></span>
 		            	</td>
 		            </tr>
 					<tr>
-						<td><label>Phone Number</label></td>
-						<td><input type="text" id="student_phone" name="student_phone" placeholder="(###)###-####" required onblur="trimString(); student_phone();"></td>
-						<td><?php echo $student_phone_error ?></td>
+						<td><label>Phone Number<span class="required">*</span></label></td>
+						<td><input type="text" maxlength="13" id="student_phone" name="student_phone" placeholder="Phone Number" required onblur="trimString(); student_phoneNumber();"></td>
 					</tr>
 					<tr>
-		                <td colspan="3">
-		            		<span id="student_error9"></span>
+						<td></td>
+		                <td>
+		            		<span id="student_error10"><?php echo $student_email_error ?></span>
 		            	</td>
 		            </tr>
 					<tr>
-						<td><label>Email Address</label></td>
-						<td><input type="email" id="student_email" name="student_email" required onblur="trimString(); validateEmail();"></td>
-						<td><?php echo $student_email_error ?></td>
+						<td><label>Email Address<span class="required">*</span></label></td>
+						<td><input type="email" id="student_email" name="student_email" required onblur="trimString(); student_emailAddress();"></td>
 					</tr>
 					<tr>
 						<td><input type="submit" name="submit" value="Submit"></td>

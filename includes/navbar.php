@@ -4,14 +4,14 @@
 			<a href="index.php">Dashboard</a>
 		</li>
 		<li>
-			<a href="classes.php">Classes</a>
+			<a href="classes/classes.php">Classes</a>
 		</li>
 		</li>
 		<li>
-			<a href="students.php">Students</a>
+			<a href="students/students.php">Students</a>
 		</li>
 		<li>
-			<a href="teachers.php">Teachers</a>
+			<a href="teachers/teachers.php">Teachers</a>
 		</li>
 		<li>
 			<a href="library.php">Library</a>

@@ -1,15 +1,20 @@
   
 
   function trimString() {
-        
+          let student_idTrim = document.getElementById("student_id");
           let student_firstNameTrim = document.getElementById("student_fName");
           let student_lastnameTrim = document.getElementById("student_lName");
           let student_address1Trim = document.getElementById("student_street1");
           let student_address2Trim = document.getElementById("student_street2");
           let student_cityTrim = document.getElementById("student_city");
           let student_zipTrim = document.getElementById("student_zipcode");
+          let student_phoneTrim = document.getElementById("student_phone");
           let student_emailTrim = document.getElementById("student_email");
          
+
+          student_idTrim.value = student_idTrim.value.replace(/^\s+/,"");        
+          student_idTrim.value = student_idTrim.value.replace(/\s+$/,"");
+
           student_firstNameTrim.value = student_firstNameTrim.value.replace(/^\s+/,"");        
           student_firstNameTrim.value = student_firstNameTrim.value.replace(/\s+$/,"");
           
@@ -28,20 +33,22 @@
           student_zipTrim.value = student_zipTrim.value.replace(/^\s+/,"");        
           student_zipTrim.value = student_zipTrim.value.replace(/\s+$/,"");
 
+          student_phoneTrim.value = student_phoneTrim.value.replace(/^\s+/,"");        
+          student_phoneTrim.value = student_phoneTrim.value.replace(/\s+$/,"");
+
           student_emailTrim.value = student_emailTrim.value.replace(/^\s+/,"");        
           student_emailTrim.value = student_emailTrim.value.replace(/\s+$/,"");
   }
 
 
-function student_id() {
-      let student_id = document.getElementById("student_id").value;
-      
+function student_idNumber() {
+      let student_id = document.getElementById("student_id").value;      
       let patt = new RegExp(/^[0-9]*$/);
-      let res = patt.exec(student_fName);
-     
+      let res = patt.exec(student_id);
+      
       if(student_id == "" || student_id == null || student_id == "null" || student_id == undefined || student_id == "undefined" || res == null) {
 
-        document.getElementById("student_error2").innerHTML = "Please enter a valid ID";
+        document.getElementById("student_error1").innerHTML = "Please enter a valid Student ID";
         document.getElementById("student_id").style.border = "1px solid red";
         return validForm = false;
       }
@@ -93,12 +100,12 @@ function student_id() {
       
       if(student_lastname == "" || student_lastname == null || student_lastname == "null" || student_lastname == undefined || student_lastname == "undefined" || res == null) {
 
-        document.getElementById("student_error2").innerHTML = "Please enter a valid last name";
+        document.getElementById("student_error3").innerHTML = "Please enter a valid last name";
         document.getElementById("student_lName").style.border = "1px solid red";
         return validForm = false;
       }
       else {
-        document.getElementById("student_error2").innerHTML = "";
+        document.getElementById("student_error3").innerHTML = "";
         document.getElementById("student_lName").style.borderTop = "2px solid #BDBDBD";
         document.getElementById("student_lName").style.borderLeft = "1px solid #BDBDBD";
         document.getElementById("student_lName").style.borderBottom = "1px solid #BDBDBD";
@@ -117,12 +124,12 @@ function student_id() {
       
       if(student_address1 == "" || student_address1 == null || student_address1 == "null" || student_address1 == undefined || student_address1 == "undefined" || res == null) {
 
-        document.getElementById("student_error3").innerHTML = "Please enter a valid street address";
+        document.getElementById("student_error4").innerHTML = "Please enter a valid street address";
         document.getElementById("student_street1").style.border = "1px solid red";
         return validForm = false;
       }
       else {
-        document.getElementById("student_error3").innerHTML = "";
+        document.getElementById("student_error4").innerHTML = "";
         document.getElementById("student_street1").style.borderTop = "2px solid #BDBDBD";
         document.getElementById("student_street1").style.borderLeft = "1px solid #BDBDBD";
         document.getElementById("student_street1").style.borderBottom = "1px solid #BDBDBD";
@@ -137,15 +144,15 @@ function student_id() {
      
       let patt = new RegExp(/^[a-zA-Z0-9 -]*$/);
       let res = patt.exec(student_address2);
-      //alert(res);  
+      
       if(res == null) {
 
-        document.getElementById("student_error4").innerHTML = "Please enter a valid street address";
+        document.getElementById("student_error5").innerHTML = "Please enter a valid street address";
         document.getElementById("student_street2").style.border = "1px solid red";
         return validForm = false;
       }
       else {
-        document.getElementById("student_error4").innerHTML = "";
+        document.getElementById("student_error5").innerHTML = "";
         document.getElementById("student_street2").style.borderTop = "2px solid #BDBDBD";
         document.getElementById("student_street2").style.borderLeft = "1px solid #BDBDBD";
         document.getElementById("student_street2").style.borderBottom = "1px solid #BDBDBD";
@@ -164,12 +171,12 @@ function student_id() {
        
       if(student_city == "" || student_city == null || student_city == "null" || student_city == undefined || student_city == "undefined" || res == null) {
 
-        document.getElementById("student_error5").innerHTML = "Please enter a valid city";
+        document.getElementById("student_error6").innerHTML = "Please enter a valid city";
         document.getElementById("student_city").style.border = "1px solid red";
         return validForm = false;
       }
       else {
-        document.getElementById("student_error5").innerHTML = "";
+        document.getElementById("student_error6").innerHTML = "";
         document.getElementById("student_city").style.borderTop = "2px solid #BDBDBD";
         document.getElementById("student_city").style.borderLeft = "1px solid #BDBDBD";
         document.getElementById("student_city").style.borderBottom = "1px solid #BDBDBD";
@@ -181,16 +188,16 @@ function student_id() {
   }
 
   function student_stateName() {
-      let student_state = document.getElementById("student_state").value;
+      let student_state = document.getElementById("student_state");
       
-      if(student_state == "") {
+      if(student_state.value == "") {
 
-        document.getElementById("student_error6").innerHTML = "Please select your state";
+        document.getElementById("student_error7").innerHTML = "Please select your state";
         document.getElementById("student_state").style.border = "1px solid red";
         return validForm = false;
       }
       else {
-        document.getElementById("student_error6").innerHTML = "";
+        document.getElementById("student_error7").innerHTML = "";
         document.getElementById("student_state").style.borderTop = "2px solid #BDBDBD";
         document.getElementById("student_state").style.borderLeft = "1px solid #BDBDBD";
         document.getElementById("student_state").style.borderBottom = "1px solid #BDBDBD";
@@ -208,12 +215,12 @@ function student_id() {
       let res = patt.exec(student_zip);
       if(student_zip == "" || student_zip == null || student_zip == "null" || student_zip == undefined || student_zip == "undefined" || res == null) {
 
-        document.getElementById("student_error7").innerHTML = "Please enter your 5 digit zip code";
+        document.getElementById("student_error8").innerHTML = "Please enter your 5 digit zip code";
         document.getElementById("student_zipcode").style.border = "1px solid red";
         return validForm = false;
       }
       else {
-        document.getElementById("student_error7").innerHTML = "";
+        document.getElementById("student_error8").innerHTML = "";
         document.getElementById("student_zipcode").style.borderTop = "2px solid #BDBDBD";
         document.getElementById("student_zipcode").style.borderLeft = "1px solid #BDBDBD";
         document.getElementById("student_zipcode").style.borderBottom = "1px solid #BDBDBD";
@@ -223,20 +230,43 @@ function student_id() {
       }
   }
 
-  function student_validateEmail() {
+
+  function student_phoneNumber() {
+      
+    let student_phone = document.getElementById("student_phone").value;
+    let patt = new RegExp(/^\(?[0-9]{3}\)?[0-9]{3}[-\s\.]?[0-9]{4}$/);
+    let res = patt.exec(student_phone);
+
+    if (student_phone == "" || student_phone == null || student_phone == "null" || student_phone == undefined || student_phone == "undefined" || res == null) {
+      document.getElementById("student_error9").innerHTML = "Please enter a valid phone number";
+      
+      document.getElementById("student_phone").style.border = "1px solid red";
+      return validForm = false;
+    }
+    else {
+      document.getElementById("student_error9").innerHTML = "";
+      document.getElementById("student_phone").style.borderTop = "2px solid #BDBDBD";
+      document.getElementById("student_phone").style.borderLeft = "1px solid #BDBDBD";
+      document.getElementById("student_phone").style.borderBottom = "1px solid #BDBDBD";
+      document.getElementById("student_phone").style.borderRight = "1px solid #BDBDBD";
+      return validForm = true;
+    }
+  }
+
+  function student_emailAddress() {
       
       let student_email = document.getElementById("student_email").value;
       let patt = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
       let res = patt.exec(student_email);
 
       if (student_email == "" || student_email == null || student_email == "null" || student_email == undefined || student_email == "undefined" || res == null) {
-        document.getElementById("student_error8").innerHTML = "Please enter a valid email address";
+        document.getElementById("student_error10").innerHTML = "Please enter a valid email address";
         
         document.getElementById("student_email").style.border = "1px solid red";
         return validForm = false;
       }
       else {
-        document.getElementById("student_error8").innerHTML = "";
+        document.getElementById("student_error10").innerHTML = "";
         document.getElementById("student_email").style.borderTop = "2px solid #BDBDBD";
         document.getElementById("student_email").style.borderLeft = "1px solid #BDBDBD";
         document.getElementById("student_email").style.borderBottom = "1px solid #BDBDBD";
@@ -250,7 +280,7 @@ function student_id() {
   }
 
   function validateForm() {
-   
+    student_idNumber();
     student_firstName();
   	student_lastName();
     student_addressOne();
@@ -258,13 +288,15 @@ function student_id() {
     student_cityName();
     student_stateName();
     student_zipCode();
-    student_validateEmail();
+    student_phoneNumber();
+    student_emailAddress();
 
      if(validForm == true) {
+        let student_id = document.getElementById('student_id').value;
         let student_fName = document.getElementById('student_fName').value;
-       	let student_lastname = document.getElementById('student_lastname').value;
-        let student_address1 = document.getElementById('student_address1').value;
-        let student_address2 = document.getElementById('student_address2').value;
+       	let student_lastname = document.getElementById('student_lName').value;
+        let student_address1 = document.getElementById('student_street1').value;
+        let student_address2 = document.getElementById('student_street2').value;
         let student_city = document.getElementById('student_city').value;
         let student_state = document.getElementById('student_state').value
         let student_zip = document.getElementById('student_zipcode').value;

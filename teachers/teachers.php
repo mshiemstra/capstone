@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<?php include 'includes/teacher_head.php'; ?>
+
+	</head>
+	<body>
+		<section class="topbar">
+		  <div class="search-container">
+		    <form action="/action_page.php">
+		      <input type="text" placeholder="Search.." name="search">
+		      <button type="submit"><i class="fa fa-search"></i></button>
+		      <script src="functions/teacher_formValidation.js"></script>
+		    </form>
+		  </div>
+		 </section>
+		<header class="header">
+			<h1>
+				<a href="../index.php"><img id="logo" src="../images/logo.png"></a>
+			</h1>
+			<?php include "includes/teacher_navbar.php" ?>
+		</header>
+		<main>
+
+			<table id="teacher_list">
+				<tr class="th">
+					<td></td>					
+					<td>Teacher ID</td>
+					<td>First Name</td>
+					<td>Last Name</td>
+					<td>Street Address</td>
+					<td>Bldg/Ste/Lot</td>
+					<td>City</td>
+					<td>State</td>
+					<td>Zipcode</td>
+					<td>Phone Number</td>
+					<td>Email Address</td>
+				</tr>
+				<?php
+					$sql = "SELECT * FROM teacher ORDER BY teacher_id ASC";
+					$result = $conn->query($sql);
+
+					if ($result->num_rows > 0) {				  
+					  while($row = mysqli_fetch_array($result)) {
+					    echo "<tr>";
+					    $link="delete_teacher.php?id=" . $row['teacher_id'];
+					    echo "<td><a id='delete' onClick=\"javascript: return confirm('Please confirm deletion');\" href='$link'>Delete</a></td>";
+					    echo "<td id='teacher_id'>" . $row["teacher_id"] . "</td><td>" . $row["teacher_fName"] . "</td><td>" . $row["teacher_lName"] . "</td><td>" . $row["teacher_street1"] . "</td><td>" . $row["teacher_street2"] . "</td><td>" . $row["teacher_city"] . "</td><td>" . $row["teacher_state"] . "</td><td>" . $row["teacher_zipcode"] . "</td><td>" . $row["teacher_phone"] . "</td><td>" . $row["teacher_email"] . "</td></tr>";
+					  }
+					} 
+					else {
+					  echo "0 results";
+					}
+
+					$conn->close();
+				?>
+
+			</table>
+
+			<button id="new_teacher"><a href="new_teacher.php">Add teacher</a></button>
+			
+
+		</main>
+	</body>
+</html>

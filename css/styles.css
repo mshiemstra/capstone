@@ -39,6 +39,7 @@ body, .content {
 }
 
 .topbar input[type=text] {
+	width: 76%;
   padding: 2px;
   margin-top: 8px;
   font-size: 17px;
@@ -137,10 +138,10 @@ nav ul li:hover{
 
 nav ul li a {
 	display: block;
-  	color: #f5f5f5;
-  	text-align: center;
-  	padding: 14px 16px;
-  	text-decoration: none;
+	color: #f5f5f5;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
 }
 
 nav ul li a:hover {
@@ -248,11 +249,15 @@ iframe {
 	text-decoration: underline;
 }
 
+#teacher_list .th {
+	text-decoration: underline;
+}
+
 #delete .th {
 	text-decoration: none;
 }
 
-#student_list, #teachers_list {
+#student_list, #teacher_list {
 	width: 125%;
 }
 
