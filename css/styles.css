@@ -245,13 +245,10 @@ iframe {
 }
 
 
-#student_list .th {
+#student_list .th, #teacher_list .th, #classes_list .th {
 	text-decoration: underline;
 }
 
-#teacher_list .th {
-	text-decoration: underline;
-}
 
 #delete .th {
 	text-decoration: none;
@@ -261,6 +258,10 @@ iframe {
 	width: 125%;
 }
 
-#classes_list {
-	width: 50%;
+#enrollment_list, #classes_list {
+	width: 100%;
+}
+
+#enrollment_list .th {
+	text-decoration: underline;
 }

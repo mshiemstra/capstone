@@ -4,7 +4,7 @@
 			<a href="../index.php">Dashboard</a>
 		</li>
 		<li>
-			<a href="../classes/classes.php">Classes</a>
+			<a href="../classes.php">Classes</a>
 		</li>
 		</li>
 		<li>
