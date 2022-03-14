@@ -23,9 +23,9 @@
 		</header>
 		<main>
 
-			<table id="student_list">
-				<tr class="th">
-					<td></td>					
+			<table class="table" id="student_list">
+				<tr class="th">	
+					<td>									
 					<td>Student ID</td>
 					<td>First Name</td>
 					<td>Last Name</td>
@@ -36,6 +36,7 @@
 					<td>Zipcode</td>
 					<td>Phone Number</td>
 					<td>Email Address</td>
+					<td></td>
 				</tr>
 				<?php
 					$sql = "SELECT * FROM student ORDER BY student_id ASC";
@@ -44,9 +45,13 @@
 					if ($result->num_rows > 0) {				  
 					  while($row = mysqli_fetch_array($result)) {
 					    echo "<tr>";
-					    $link="delete_student.php?id=" . $row['student_id'];
-					    echo "<td><a id='delete' onClick=\"javascript: return confirm('Please confirm deletion');\" href='$link'>Delete</a></td>";
-					    echo "<td id='student_id'>" . $row["student_id"] . "</td><td>" . $row["student_fName"] . "</td><td>" . $row["student_lName"] . "</td><td>" . $row["student_street1"] . "</td><td>" . $row["student_street2"] . "</td><td>" . $row["student_city"] . "</td><td>" . $row["student_state"] . "</td><td>" . $row["student_zipcode"] . "</td><td>" . $row["student_phone"] . "</td><td>" . $row["student_email"] . "</td></tr>";
+					    $select = "../search_results.php?id=" . $row['student_id'];
+					    echo "<td><a id='select' href='$select'>Select</a></td>";
+
+					    echo "<td id='student_id'>" . $row["student_id"] . "</td><td>" . $row["student_fName"] . "</td><td>" . $row["student_lName"] . "</td><td>" . $row["student_street1"] . "</td><td>" . $row["student_street2"] . "</td><td>" . $row["student_city"] . "</td><td>" . $row["student_state"] . "</td><td>" . $row["student_zipcode"] . "</td><td>" . $row["student_phone"] . "</td><td>" . $row["student_email"] . "</td>";
+
+					    $delete = "delete_student.php?id=" . $row['student_id'];
+					    echo "<td><a id='delete' onClick=\"javascript: return confirm('Please confirm deletion');\" href='$delete'>Delete</a></td></tr>";
 					  }
 					} 
 					else {
@@ -62,5 +67,6 @@
 			
 
 		</main>
+		
 	</body>
 </html>

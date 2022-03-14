@@ -8,4 +8,5 @@
 			<link rel="stylesheet" href="https://use.typekit.net/uho4dic.css">
 			<link rel="stylesheet" type="text/css" href="css/styles.css">
 			<link rel="stylesheet" type="text/css" href="css/student_form.css">
+
 			<?php include 'db.php'; ?>

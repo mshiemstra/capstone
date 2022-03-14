@@ -30,7 +30,7 @@
 		            </tr>
 					<tr>
 						<td><label>Teacher ID<span class="required">*</span></label></td>
-						<td><input type="text" id="teacher_id" name="teacher_id" required onblur="trimString(); teacher_idNumber();"></td>
+						<td><input type="text" id="teacher_id" name="teacher_id" required></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -40,7 +40,7 @@
 		            </tr>
 					<tr>
 						<td><label>First Name<span class="required">*</span></label></td>
-						<td><input type="text" id="teacher_fName" name="teacher_fName" required onblur="trimString(); teacher_firstName();"></td>
+						<td><input type="text" id="teacher_fName" name="teacher_fName" required></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -50,7 +50,7 @@
 		            </tr>
 					<tr>
 						<td><label>Last Name<span class="required">*</span></label></td>
-						<td><input type="text" id="teacher_lName" name="teacher_lName" required onblur="trimString(); teacher_lastName();"></td>
+						<td><input type="text" id="teacher_lName" name="teacher_lName" required></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -60,7 +60,7 @@
 		            </tr>
 					<tr>
 						<td><label>Street Address<span class="required">*</span></label></td>
-						<td><input type="text" id="teacher_street1" name="teacher_street1" required onblur="trimString(); teacher_addressOne();"></td>
+						<td><input type="text" id="teacher_street1" name="teacher_street1" required></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -70,7 +70,7 @@
 		            </tr>
 					<tr>
 						<td><label>Bldg/Ste/Lot #</label></td>
-						<td><input type="text" id="teacher_street2" name="teacher_street2" onblur="trimString(); teacher_addressTwo();"></td>						
+						<td><input type="text" id="teacher_street2" name="teacher_street2"></td>						
 					</tr>
 					<tr>
 						<td></td>
@@ -80,7 +80,7 @@
 		            </tr>
 					<tr>
 						<td><label>City<span class="required">*</span></label></td>
-						<td><input type="text" id="teacher_city" name="teacher_city" required onblur="trimString(); teacher_cityName();"></td>
+						<td><input type="text" id="teacher_city" name="teacher_city" required></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -91,7 +91,7 @@
 					<tr>
 						<td><label>State<span class="required">*</span></label></td>
 						<td>
-		                <select id="teacher_state" name="teacher_state"  required onblur="teacher_stateName();">
+		                <select id="teacher_state" name="teacher_state"  required>
 		                    <option value="">--- Select ---</option>
 		                    <option value="AL">Alabama</option>
 		                    <option value="AK">Alaska</option>
@@ -154,7 +154,7 @@
 		            </tr>
 					<tr>
 						<td><label>Zipcode<span class="required">*</span></label></td>
-						<td><input type="text" id="teacher_zipcode" name="teacher_zipcode" required onblur="trimString(); teacher_zipCode();"></td>
+						<td><input type="text" id="teacher_zipcode" name="teacher_zipcode" required></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -164,7 +164,7 @@
 		            </tr>
 					<tr>
 						<td><label>Phone Number<span class="required">*</span></label></td>
-						<td><input type="text" maxlength="13" id="teacher_phone" name="teacher_phone" placeholder="Phone Number" required onblur="trimString(); teacher_phoneNumber();"></td>
+						<td><input type="text" maxlength="13" id="teacher_phone" name="teacher_phone" placeholder="Phone Number" required></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -174,7 +174,7 @@
 		            </tr>
 					<tr>
 						<td><label>Email Address<span class="required">*</span></label></td>
-						<td><input type="email" id="teacher_email" name="teacher_email" required onblur="trimString(); teacher_emailAddress();"></td>
+						<td><input type="email" id="teacher_email" name="teacher_email" required></td>
 					</tr>
 					<tr>
 						<td><input type="submit" name="submit" value="Submit"></td>

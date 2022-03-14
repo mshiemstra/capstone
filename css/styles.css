@@ -245,7 +245,7 @@ iframe {
 }
 
 
-#student_list .th, #teacher_list .th, #classes_list .th {
+#student_list .th, #teacher_list .th, #classes_list .th, #results_list .th {
 	text-decoration: underline;
 }
 
@@ -258,7 +258,7 @@ iframe {
 	width: 125%;
 }
 
-#enrollment_list, #classes_list {
+#enrollment_list, #classes_list, #results_list {
 	width: 100%;
 }
 

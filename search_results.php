@@ -22,25 +22,28 @@
 		</header>
 		<main>
 
-			<table id="classes_list">
+			<table id="results_list">
 				<tr class="th">					
-					<td>Class ID</td>
+					<td>ID</td>
+					<td>First Name</td>
+					<td>Last Name</td>
 					<td>Class Description</td>
 					<td>Class Name</td>
 					<td>Instructor</td>
-					<td>Term</td>	
-					<td># of Students</td>				
+					<td>Term</td>				
 				</tr>
 				<?php
+					$id = $_REQUEST['id'];
+					$id = mysqli_real_escape_string($conn, $id);
 
-					$sql = "SELECT C.class_id, C.class_desc, C.class_name, C.class_teacher, C.class_term, E.student_id, COUNT(*) AS student_count FROM class AS C, enrollment AS E, student AS S WHERE E.class_id = C.class_id AND E.student_id = S.student_id GROUP BY class_id";
+					$sql = "SELECT * FROM class AS C, enrollment AS E, student AS S WHERE E.class_id = C.class_id AND E.student_id = S.student_id AND E.student_id = $id GROUP BY class_name ASC";
 
 		
 					$result = $conn->query($sql);
 
 					if ($result->num_rows > 0) {				  
 					  while($row = mysqli_fetch_array($result)) {
-					    echo "<tr><td>" . $row["class_id"] . "</td><td>" . $row["class_desc"] . "</td><td>" . $row["class_name"] . "</td><td>" . $row["class_teacher"] . "</td><td>" . $row["class_term"] . "</td><td>" . $row["student_count"] . "</td></tr>";					
+					    echo "<tr><td>" . $row["student_id"] . "</td><td>" . $row["student_fName"] . "</td><td>" . $row["student_lName"] . "</td><td>" . $row["class_desc"] . "</td><td>" . $row["class_name"] . "</td><td>" . $row["class_teacher"] . "</td><td>" . $row["class_term"] . "</td></tr>";					
 					  }
 					} 
 					else {
@@ -49,9 +52,6 @@
 
 					$conn->close();
 				?>
-
-
-
 
 
 			</table>

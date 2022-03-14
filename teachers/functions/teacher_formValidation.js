@@ -1,288 +1,305 @@
-  
+$(document).ready(function(){
+  //alert('ready');
 
   function trimString() {
-          let teacher_idTrim = document.getElementById("teacher_id");
-          let teacher_firstNameTrim = document.getElementById("teacher_fName");
-          let teacher_lastnameTrim = document.getElementById("teacher_lName");
-          let teacher_address1Trim = document.getElementById("teacher_street1");
-          let teacher_address2Trim = document.getElementById("teacher_street2");
-          let teacher_cityTrim = document.getElementById("teacher_city");
-          let teacher_zipTrim = document.getElementById("teacher_zipcode");
-          let teacher_phoneTrim = document.getElementById("teacher_phone");
-          let teacher_emailTrim = document.getElementById("teacher_email");
-         
+    var teacher_id = $("#teacher_id").text();
+    var teacher_idTrim = $.trim(teacher_id);
 
-          teacher_idTrim.value = teacher_idTrim.value.replace(/^\s+/,"");        
-          teacher_idTrim.value = teacher_idTrim.value.replace(/\s+$/,"");
+    var teacher_fNmae = $("#teacher_fName").text();
+    var teacher_fNameTrim = $.trim(teacher_fName);
 
-          teacher_firstNameTrim.value = teacher_firstNameTrim.value.replace(/^\s+/,"");        
-          teacher_firstNameTrim.value = teacher_firstNameTrim.value.replace(/\s+$/,"");
-          
-          teacher_lastnameTrim.value = teacher_lastnameTrim.value.replace(/^\s+/,"");        
-          teacher_lastnameTrim.value = teacher_lastnameTrim.value.replace(/\s+$/,"");
-          
-          teacher_address1Trim.value = teacher_address1Trim.value.replace(/^\s+/,"");        
-          teacher_address1Trim.value = teacher_address1Trim.value.replace(/\s+$/,"");
-   
-          teacher_address2Trim.value = teacher_address2Trim.value.replace(/^\s+/,"");        
-          teacher_address2Trim.value = teacher_address2Trim.value.replace(/\s+$/,"");
+    var teacher_lName = $("#teacher_lName").text();
+    var teacher_lNameTrim = $.trim(teacher_lName);
 
-          teacher_cityTrim.value = teacher_cityTrim.value.replace(/^\s+/,"");        
-          teacher_cityTrim.value = teacher_cityTrim.value.replace(/\s+$/,"");
+    var teacher_address1 = $("#teacher_street1").text();
+    var teacher_street1Trim = $.trim(teacher_street1);
 
-          teacher_zipTrim.value = teacher_zipTrim.value.replace(/^\s+/,"");        
-          teacher_zipTrim.value = teacher_zipTrim.value.replace(/\s+$/,"");
+    var teacher_address2 = $("#teacher_street2").text();
+    var teacher_street2Trim = $.trim(teacher_street2);
+    
+    var teacher_city = $("#teacher_city").text();
+    var teacher_cityTrim = $.trim(teacher_city);
 
-          teacher_phoneTrim.value = teacher_phoneTrim.value.replace(/^\s+/,"");        
-          teacher_phoneTrim.value = teacher_phoneTrim.value.replace(/\s+$/,"");
+    var teacher_zip = $("#teacher_zipcode").text();
+    var teacher_zipTrim = $.trim(teacher_zip);
 
-          teacher_emailTrim.value = teacher_emailTrim.value.replace(/^\s+/,"");        
-          teacher_emailTrim.value = teacher_emailTrim.value.replace(/\s+$/,"");
+    var teacher_phone = $("#teacher_phone").text();
+    var teacher_phoneTrim = $.trim(teacher_phone);
+
+    var teacher_email = $("#teacher_email").text();
+    var teacher_emailTrim = $.trim(teacher_email);
+
+
+
+    $("#teacher_id").html(teacher_idTrim);
+    $("#teacher_fName").html(teacher_fNameTrim);
+    $("#teacher_lName").html(teacher_lNameTrim);
+    $("#teacher_street1").html(teacher_address1Trim);
+    $("#teacher_street2").html(teacher_addres2Trim);
+    $("#teacher_city").html(teacher_cityTrim);
+    $("#teacher_zipcode").html(teacher_zipTrim);
+    $("#teacher_phone").html(teacher_phoneTrim);
+    $("#teacher_email").html(teacher_emailTrim);
+
   }
 
 
-function teacher_idNumber() {
-      let teacher_id = document.getElementById("teacher_id").value;      
+  function teacher_idNumber() {
+   
+      let teacher_id = $("#teacher_id").val();      
       let patt = new RegExp(/^[0-9]*$/);
       let res = patt.exec(teacher_id);
-      
+
       if(teacher_id == "" || teacher_id == null || teacher_id == "null" || teacher_id == undefined || teacher_id == "undefined" || res == null) {
+       
 
-        document.getElementById("teacher_error1").innerHTML = "Please enter a valid teacher ID";
-        document.getElementById("teacher_id").style.border = "1px solid red";
+        $('#teacher_error1').html('Please enter a valid teacher ID');
+
         return validForm = false;
       }
       else {
-        document.getElementById("teacher_error1").innerHTML = "";
-        document.getElementById("teacher_id").style.borderTop = "2px solid #BDBDBD";
-        document.getElementById("teacher_id").style.borderLeft = "1px solid #BDBDBD";
-        document.getElementById("teacher_id").style.borderBottom = "1px solid #BDBDBD";
-        document.getElementById("teacher_id").style.borderRight = "1px solid #BDBDBD";
+        $('#teacher_error1').html('');
+        $('#teacher_id').css('border', '2px solid #BDBDBD');
         
         return validForm = true;
-      } 
+    }
+
   }
-
-
-
-  function teacher_firstName() {
-      let teacher_fName = document.getElementById("teacher_fName").value;
-      
-      let patt = new RegExp(/^[a-zA-Z -]*$/);
-      let res = patt.exec(teacher_fName);
-     
-      if(teacher_fName == "" || teacher_fName == null || teacher_fName == "null" || teacher_fName == undefined || teacher_fName == "undefined" || res == null) {
-
-        document.getElementById("teacher_error2").innerHTML = "Please enter a valid first name";
-        document.getElementById("teacher_fName").style.border = "1px solid red";
-        return validForm = false;
-      }
-      else {
-        document.getElementById("teacher_error2").innerHTML = "";
-        document.getElementById("teacher_fName").style.borderTop = "2px solid #BDBDBD";
-        document.getElementById("teacher_fName").style.borderLeft = "1px solid #BDBDBD";
-        document.getElementById("teacher_fName").style.borderBottom = "1px solid #BDBDBD";
-        document.getElementById("teacher_fName").style.borderRight = "1px solid #BDBDBD";
-        
-        return validForm = true;
-      } 
-  }
-
-
   
 
-  function teacher_lastName() {
 
-      let teacher_lastname = document.getElementById("teacher_lName").value;
-      
+  function teacher_firstname() {
+   
+      let teacher_fName = $("#teacher_fName").val();      
       let patt = new RegExp(/^[a-zA-Z -]*$/);
-      let res = patt.exec(teacher_lastname);
-      
-      if(teacher_lastname == "" || teacher_lastname == null || teacher_lastname == "null" || teacher_lastname == undefined || teacher_lastname == "undefined" || res == null) {
+      let res = patt.exec(teacher_fName);
 
-        document.getElementById("teacher_error3").innerHTML = "Please enter a valid last name";
-        document.getElementById("teacher_lName").style.border = "1px solid red";
+      if(teacher_fName == "" || teacher_fName == null || teacher_fName == "null" || teacher_fName == undefined || teacher_fName == "undefined" || res == null) {
+       
+
+        $('#teacher_error2').html('Please enter a valid first name');
+
         return validForm = false;
       }
       else {
-        document.getElementById("teacher_error3").innerHTML = "";
-        document.getElementById("teacher_lName").style.borderTop = "2px solid #BDBDBD";
-        document.getElementById("teacher_lName").style.borderLeft = "1px solid #BDBDBD";
-        document.getElementById("teacher_lName").style.borderBottom = "1px solid #BDBDBD";
-        document.getElementById("teacher_lName").style.borderRight = "1px solid #BDBDBD";
+        $('#teacher_error2').html('');
+        $('#teacher_fName').css('border', '2px solid #BDBDBD');
         
         return validForm = true;
-      } 
+    }
+
   }
+
+
+
+  function teacher_lastname() {
+   
+      let teacher_lName = $("#teacher_lName").val();      
+      let patt = new RegExp(/^[a-zA-Z -]*$/);
+      let res = patt.exec(teacher_lName);
+
+      if(teacher_lName == "" || teacher_lName == null || teacher_lName == "null" || teacher_lName == undefined || teacher_lName == "undefined" || res == null) {
+       
+
+        $('#teacher_error3').html('Please enter a valid last name');
+
+        return validForm = false;
+      }
+      else {
+        $('#teacher_error3').html('');
+        $('#teacher_lName').css('border', '2px solid #BDBDBD');
+        
+        return validForm = true;
+      }
+  }
+
+
+
 
   function teacher_addressOne() {
-
-      let teacher_address1 = document.getElementById("teacher_street1").value;
-      
+   
+      let teacher_street1 = $("#teacher_street1").val();      
       let patt = new RegExp(/^[A-Za-z.0-9\s_-]+$/);
-      let res = patt.exec(teacher_address1);
-      
-      if(teacher_address1 == "" || teacher_address1 == null || teacher_address1 == "null" || teacher_address1 == undefined || teacher_address1 == "undefined" || res == null) {
+      let res = patt.exec(teacher_street1);
 
-        document.getElementById("teacher_error4").innerHTML = "Please enter a valid street address";
-        document.getElementById("teacher_street1").style.border = "1px solid red";
+      if(teacher_street1 == "" || teacher_street1 == null || teacher_street1 == "null" || teacher_street1 == undefined || teacher_street1 == "undefined" || res == null) {
+       
+
+        $('#teacher_error4').html('Please enter a valid address');
+
         return validForm = false;
       }
       else {
-        document.getElementById("teacher_error4").innerHTML = "";
-        document.getElementById("teacher_street1").style.borderTop = "2px solid #BDBDBD";
-        document.getElementById("teacher_street1").style.borderLeft = "1px solid #BDBDBD";
-        document.getElementById("teacher_street1").style.borderBottom = "1px solid #BDBDBD";
-        document.getElementById("teacher_street1").style.borderRight = "1px solid #BDBDBD";
+        $('#teacher_error4').html('');
+        $('#teacher_street1').css('border', '2px solid #BDBDBD');
         
         return validForm = true;
-      } 
+    }
+
   }
+
+
+
 
   function teacher_addressTwo() {
-      let teacher_address2 = document.getElementById("teacher_street2").value;
-     
-      let patt = new RegExp(/^[a-zA-Z0-9 -]*$/);
-      let res = patt.exec(teacher_address2);
-      
-      if(res == null) {
-
-        document.getElementById("teacher_error5").innerHTML = "Please enter a valid street address";
-        document.getElementById("teacher_street2").style.border = "1px solid red";
-        return validForm = false;
-      }
-      else {
-        document.getElementById("teacher_error5").innerHTML = "";
-        document.getElementById("teacher_street2").style.borderTop = "2px solid #BDBDBD";
-        document.getElementById("teacher_street2").style.borderLeft = "1px solid #BDBDBD";
-        document.getElementById("teacher_street2").style.borderBottom = "1px solid #BDBDBD";
-        document.getElementById("teacher_street2").style.borderRight = "1px solid #BDBDBD";
-        
-        return validForm = true;
-      } 
-  }
-
-  function teacher_cityName() {
    
-      let teacher_city = document.getElementById("teacher_city").value;
-      
-      let patt = new RegExp(/^[a-zA-Z ]*$/);
-      let res = patt.exec(teacher_city);
-       
-      if(teacher_city == "" || teacher_city == null || teacher_city == "null" || teacher_city == undefined || teacher_city == "undefined" || res == null) {
+      let teacher_street2 = $("#teacher_street2").val();      
+      let patt = new RegExp(/^[A-Za-z.0-9\s_-]*$/);
+      let res = patt.exec(teacher_id);
 
-        document.getElementById("teacher_error6").innerHTML = "Please enter a valid city";
-        document.getElementById("teacher_city").style.border = "1px solid red";
+      if(res == null) {
+       
+
+        $('#teacher_error5').html('Please enter a valid address');
+
         return validForm = false;
       }
       else {
-        document.getElementById("teacher_error6").innerHTML = "";
-        document.getElementById("teacher_city").style.borderTop = "2px solid #BDBDBD";
-        document.getElementById("teacher_city").style.borderLeft = "1px solid #BDBDBD";
-        document.getElementById("teacher_city").style.borderBottom = "1px solid #BDBDBD";
-        document.getElementById("teacher_city").style.borderRight = "1px solid #BDBDBD";
+        $('#teacher_error5').html('');
+        $('#teacher_street2').css('border', '2px solid #BDBDBD');
         
         return validForm = true;
-      } 
+    }
 
   }
+
+
+
+
+  function teacher_city() {
+   
+      let teacher_city = $("#teacher_city").val();      
+      let patt = new RegExp(/^[a-zA-Z\s]*$/);
+      let res = patt.exec(teacher_city);
+
+      if(teacher_city == "" || teacher_city == null || teacher_city == "null" || teacher_city == undefined || teacher_city == "undefined" || res == null) {
+       
+
+        $('#teacher_error6').html('Please enter a valid City');
+
+        return validForm = false;
+      }
+      else {
+        $('#teacher_error6').html('');
+        $('#teacher_city').css('border', '2px solid #BDBDBD');
+        
+        return validForm = true;
+    }
+  }
+
+
 
   function teacher_stateName() {
-      let teacher_state = document.getElementById("teacher_state");
-      
-      if(teacher_state.value == "") {
+      let teacher_state = $("#teacher_state").val();
 
-        document.getElementById("teacher_error7").innerHTML = "Please select your state";
-        document.getElementById("teacher_state").style.border = "1px solid red";
+      if(teacher_state == "") {
+       
+
+        $('#teacher_error7').html('Please select a state');
+
         return validForm = false;
       }
       else {
-        document.getElementById("teacher_error7").innerHTML = "";
-        document.getElementById("teacher_state").style.borderTop = "2px solid #BDBDBD";
-        document.getElementById("teacher_state").style.borderLeft = "1px solid #BDBDBD";
-        document.getElementById("teacher_state").style.borderBottom = "1px solid #BDBDBD";
-        document.getElementById("teacher_state").style.borderRight = "1px solid #BDBDBD";
+        $('#teacher_error7').html('');
+        $('#teacher_state').css('border', '2px solid #BDBDBD');
         
         return validForm = true;
-      } 
+    }
      
   }
+
+
+
 
   function teacher_zipCode() {
    
-      let teacher_zip = document.getElementById("teacher_zipcode").value;
+      let teacher_zipcode = $("#teacher_zipcode").val();      
       let patt = new RegExp(/^[0-9]{5}$/);
-      let res = patt.exec(teacher_zip);
-      if(teacher_zip == "" || teacher_zip == null || teacher_zip == "null" || teacher_zip == undefined || teacher_zip == "undefined" || res == null) {
+      let res = patt.exec(teacher_zipcode);
 
-        document.getElementById("teacher_error8").innerHTML = "Please enter your 5 digit zip code";
-        document.getElementById("teacher_zipcode").style.border = "1px solid red";
+      if(teacher_zipcode == "" || teacher_zipcode == null || teacher_zipcode == "null" || teacher_zipcode == undefined || teacher_zipcode == "undefined" || res == null) {
+       
+
+        $('#teacher_error8').html('Please enter a valid zipcode');
+
         return validForm = false;
       }
       else {
-        document.getElementById("teacher_error8").innerHTML = "";
-        document.getElementById("teacher_zipcode").style.borderTop = "2px solid #BDBDBD";
-        document.getElementById("teacher_zipcode").style.borderLeft = "1px solid #BDBDBD";
-        document.getElementById("teacher_zipcode").style.borderBottom = "1px solid #BDBDBD";
-        document.getElementById("teacher_zipcode").style.borderRight = "1px solid #BDBDBD";
+        $('#teacher_error8').html('');
+        $('#teacher_zipcode').css('border', '2px solid #BDBDBD');
         
         return validForm = true;
+    }
+
+  }
+ 
+
+
+
+  function teacher_phone() {
+   
+      let teacher_phone = $("#teacher_phone").val();      
+      let patt = new RegExp(/^\(?[0-9]{3}\)?[0-9]{3}[-\s\.]?[0-9]{4}$/);
+      let res = patt.exec(teacher_phone);
+
+      if(teacher_phone == "" || teacher_phone == null || teacher_phone == "null" || teacher_phone == undefined || teacher_phone == "undefined" || res == null) {
+       
+
+        $('#teacher_error9').html('Please enter a valid Phone Number');
+
+        return validForm = false;
       }
+      else {
+        $('#teacher_error9').html('');
+        $('#teacher_phone').css('border', '2px solid #BDBDBD');
+        
+        return validForm = true;
+    }
+
   }
 
-
-  function teacher_phoneNumber() {
-      
-    let teacher_phone = document.getElementById("teacher_phone").value;
-    let patt = new RegExp(/^\(?[0-9]{3}\)?[0-9]{3}[-\s\.]?[0-9]{4}$/);
-    let res = patt.exec(teacher_phone);
-
-    if (teacher_phone == "" || teacher_phone == null || teacher_phone == "null" || teacher_phone == undefined || teacher_phone == "undefined" || res == null) {
-      document.getElementById("teacher_error9").innerHTML = "Please enter a valid phone number";
-      
-      document.getElementById("teacher_phone").style.border = "1px solid red";
-      return validForm = false;
-    }
-    else {
-      document.getElementById("teacher_error9").innerHTML = "";
-      document.getElementById("teacher_phone").style.borderTop = "2px solid #BDBDBD";
-      document.getElementById("teacher_phone").style.borderLeft = "1px solid #BDBDBD";
-      document.getElementById("teacher_phone").style.borderBottom = "1px solid #BDBDBD";
-      document.getElementById("teacher_phone").style.borderRight = "1px solid #BDBDBD";
-      return validForm = true;
-    }
-  }
 
   function teacher_emailAddress() {
-      
-      let teacher_email = document.getElementById("teacher_email").value;
+   
+      let teacher_email = $("#teacher_email").val();      
       let patt = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
-      let res = patt.exec(teacher_email);
+      let res = patt.exec(teacher_email);      
 
-      if (teacher_email == "" || teacher_email == null || teacher_email == "null" || teacher_email == undefined || teacher_email == "undefined" || res == null) {
-        document.getElementById("teacher_error10").innerHTML = "Please enter a valid email address";
-        
-        document.getElementById("teacher_email").style.border = "1px solid red";
+      if(teacher_email == "" || teacher_email == null || teacher_email == "null" || teacher_email == undefined || teacher_email == "undefined" || res == null) {
+       
+
+        $('#teacher_error10').html('Please enter a valid Phone Number');
+
         return validForm = false;
       }
       else {
-        document.getElementById("teacher_error10").innerHTML = "";
-        document.getElementById("teacher_email").style.borderTop = "2px solid #BDBDBD";
-        document.getElementById("teacher_email").style.borderLeft = "1px solid #BDBDBD";
-        document.getElementById("teacher_email").style.borderBottom = "1px solid #BDBDBD";
-        document.getElementById("teacher_email").style.borderRight = "1px solid #BDBDBD";
+        $('#teacher_error10').html('');
+        $('#teacher_email').css('border', '2px solid #BDBDBD');
+        
         return validForm = true;
-      }
+    }
+
   }
 
-  function goBack() {
-      window.location.reload();
-  }
+
+
+
+  $('#teacher_id').blur(teacher_idNumber);
+  $('#teacher_fName').blur(teacher_firstname);
+  $('#teacher_lName').blur(teacher_lastname);
+  $('#teacher_street1').blur(teacher_addressOne);
+ // $('#teacher_street2').blur(teacher_addressTwo);
+  $('#teacher_city').blur(teacher_city);
+  $('#teacher_state').blur(teacher_stateName);
+  $('#teacher_zipcode').blur(teacher_zipCode);
+  $('#teacher_phone').blur(teacher_phone);
+  $('#teacher_email').blur(teacher_emailAddress);
+
 
   function validateForm() {
     teacher_idNumber();
     teacher_firstName();
-  	teacher_lastName();
+    teacher_lastName();
     teacher_addressOne();
     teacher_addressTwo();
     teacher_cityName();
@@ -291,26 +308,35 @@ function teacher_idNumber() {
     teacher_phoneNumber();
     teacher_emailAddress();
 
-     if(validForm == true) {
-        let teacher_id = document.getElementById('teacher_id').value;
-        let teacher_fName = document.getElementById('teacher_fName').value;
-       	let teacher_lastname = document.getElementById('teacher_lName').value;
-        let teacher_address1 = document.getElementById('teacher_street1').value;
-        let teacher_address2 = document.getElementById('teacher_street2').value;
-        let teacher_city = document.getElementById('teacher_city').value;
-        let teacher_state = document.getElementById('teacher_state').value
-        let teacher_zip = document.getElementById('teacher_zipcode').value;
-        let teacher_email = document.getElementById('teacher_email').value;
 
-       
-        if(address2 != null && address2 != '' && address2 != undefined) {
-          document.write(address2 + '<br>');
-        }
-        else {
-          document.write('N/A <br>');
-        }        
+    if(validForm == true){
+      var teacher_id = $('#teacher_id').val();
+      var teacher_fName = $('#teacher_fName').val();
+      var teacher_lName = $('#teacher_lName').val();
+      var teacher_street1 = $('#teacher_street1').val();
+      var teacher_street2 = $('#teacher_street2').val();
+      var teacher_city = $('#teacher_city').val();
+      var teacher_state = $('#teacher_state').val();
+      var teacher_zipcode = $('#teacher_zipcode').val();
+      var teacher_phone = $('#teacher_phone').val();
+      var teacher_email = $('#teacher_email').val();
+
+
+      if(address2 != null && address2 != '' && address2 != undefined) {
+        $('#teacher_street2').text('<br>');
       }
       else {
-        return false;
-      }
+        $('#teacher_street2').text('N/A <br>');
+      }     
+    } 
+    else {
+      return false;
+    }
+
   }
+
+  function goBack() {
+      window.location.reload();
+  }
+
+});  
