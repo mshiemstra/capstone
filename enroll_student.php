@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -26,11 +24,16 @@
 		<main>
 		   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 				<form id="enrollment_form" action="javascript:void(0)" method="post">
-				  <input type="text" id="student_id" name="student_id">
-				  <input type="text" id="class_id" name="class_id">				 
+				  <input type="text" id="class_id" name="class_id">
+				  <input type="text" id="student_id" name="student_id">				 
 				  <button value="Submit" type="submit">Submit</button>
 				</form>
-				<script src="js/search_function.js"></script>
+
+				<div id="result">
+					start
+				</div>
+
+				<script src="js/enroll_student_function.js"></script>
 
 		</main>
 	</body>

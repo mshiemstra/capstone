@@ -9,12 +9,14 @@ $('#enrollment_form').on('submit', function(e) {
   console.log(json);
   $.ajax({
     type: 'POST',
-    url: 'https://localhost/hiemstraonlinedesign.com/school-files/simpson/spring_2022/capstone/enroll_student.php',
+    url: 'enroll_student_process.php',
     dataType: 'json',
     data: json,
     contentType: 'application/json',
     success: function(data) {
-      console.log(data)
+        console.log(data);
+        $('#result').text(data['message']);
+      //  console.log('something');
     }
   });
 });
