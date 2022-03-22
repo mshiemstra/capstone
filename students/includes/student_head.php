@@ -8,8 +8,10 @@
 			<link rel="stylesheet" href="https://use.typekit.net/uho4dic.css">
 			<link rel="stylesheet" type="text/css" href="../css/styles.css">
 			<link rel="stylesheet" type="text/css" href="../css/student_form.css">
+			
 			<script src="../students/functions/student_formValidation.js"></script>
 			<script src="../students/functions/student_regex_restriction.js"></script>
+			<script src="../students/functions/new_student_function.js"></script>
 			
 			<?php include '../includes/db.php'; ?>
 			<?php include '../students/functions/student_formhandling.php' ?>

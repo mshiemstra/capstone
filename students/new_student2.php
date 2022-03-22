@@ -20,47 +20,47 @@
 		</header>
 		<main>
 			
-			<form method="post" action="javascript:void(0)">
+			<form method="post" id="new_student_form" action="javascript:void(0)">
 				<table>
 					<tr>
 						<td></td>
 		                <td>
-		            		<span id="student_error1"><?php echo $student_id_error ?></span>
+		            		<span id="student_error1"></span>
 		            	</td>
 		            </tr>
 					<tr>
 						<td><label>Student ID<span class="required">*</span></label></td>
-						<td><input type="text" id="student_id" name="student_id" required></td>
+						<td><input type="text" id="student_id" name="student_id" ></td>
 					</tr>
 					<tr>
 						<td></td>
 		                <td>
-		            		<span id="student_error2"><?php echo $student_fName_error ?></span>
+		            		<span id="student_error2"></span>
 		            	</td>
 		            </tr>
 					<tr>
 						<td><label>First Name<span class="required">*</span></label></td>
-						<td><input type="text" id="student_fName" name="student_fName" required></td>
+						<td><input type="text" id="student_fName" name="student_fName" ></td>
 					</tr>
 					<tr>
 						<td></td>
 		                <td>
-		            		<span id="student_error3"><?php echo $student_lName_error ?></span>
+		            		<span id="student_error3"></span>
 		            	</td>
 		            </tr>
 					<tr>
 						<td><label>Last Name<span class="required">*</span></label></td>
-						<td><input type="text" id="student_lName" name="student_lName" required></td>
+						<td><input type="text" id="student_lName" name="student_lName" ></td>
 					</tr>
 					<tr>
 						<td></td>
 		                <td>
-		            		<span id="student_error4"><?php echo $student_street1_error ?></span>
+		            		<span id="student_error4"></span>
 		            	</td>
 		            </tr>
 					<tr>
 						<td><label>Street Address<span class="required">*</span></label></td>
-						<td><input type="text" id="student_street1" name="student_street1" required></td>
+						<td><input type="text" id="student_street1" name="student_street1" ></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -75,23 +75,23 @@
 					<tr>
 						<td></td>
 		                <td>
-		            		<span id="student_error6"><?php echo $student_city_error ?></span>
+		            		<span id="student_error6"></span>
 		            	</td>
 		            </tr>
 					<tr>
 						<td><label>City<span class="required">*</span></label></td>
-						<td><input type="text" id="student_city" name="student_city" required></td>
+						<td><input type="text" id="student_city" name="student_city" ></td>
 					</tr>
 					<tr>
 						<td></td>
 		                <td>
-		            		<span id="student_error7"><?php echo $student_state_error ?></span>
+		            		<span id="student_error7"></span>
 		            	</td>
 		            </tr>
 					<tr>
 						<td><label>State<span class="required">*</span></label></td>
 						<td>
-		                <select id="student_state" name="student_state" required>
+		                <select id="student_state" name="student_state" >
 		                    <option value="">--- Select ---</option>
 		                    <option value="AL">Alabama</option>
 		                    <option value="AK">Alaska</option>
@@ -149,32 +149,32 @@
 					<tr>
 						<td></td>
 		                <td>
-		            		<span id="student_error8"><?php echo $student_zipcode_error ?></span>
+		            		<span id="student_error8"></span>
 		            	</td>
 		            </tr>
 					<tr>
 						<td><label>Zipcode<span class="required">*</span></label></td>
-						<td><input type="text" id="student_zipcode" name="student_zipcode" required></td>
+						<td><input type="text" id="student_zipcode" name="student_zipcode" ></td>
 					</tr>
 					<tr>
 						<td></td>
 		                <td>
-		            		<span id="student_error9"><?php echo $student_phone_error ?></span>
+		            		<span id="student_error9"></span>
 		            	</td>
 		            </tr>
 					<tr>
 						<td><label>Phone Number<span class="required">*</span></label></td>
-						<td><input type="text" maxlength="13" id="student_phone" name="student_phone" placeholder="Phone Number" required></td>
+						<td><input type="text" maxlength="13" id="student_phone" name="student_phone" placeholder="Phone Number" ></td>
 					</tr>
 					<tr>
 						<td></td>
 		                <td>
-		            		<span id="student_error10"><?php echo $student_email_error ?></span>
+		            		<span id="student_error10"></span>
 		            	</td>
 		            </tr>
 					<tr>
 						<td><label>Email Address<span class="required">*</span></label></td>
-						<td><input type="email" id="student_email" name="student_email" required></td>
+						<td><input type="email" id="student_email" name="student_email" ></td>
 					</tr>
 					<tr>
 						<td><input type="submit" name="submit" value="Submit"></td>

@@ -16,6 +16,10 @@ $('#enrollment_form').on('submit', function(e) {
     success: function(data) {
         console.log(data);
         $('#result').text(data['message']);
+        if(data['success']){
+          $('#class_id').val("");
+          $('#student_id').val("");
+        }
       //  console.log('something');
     }
   });

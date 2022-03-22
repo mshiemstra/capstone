@@ -52,7 +52,15 @@
 
 					$conn->close();
 				?>
-
+				<tr>
+					<td><button id="enroll_student"><a href="enroll_student.php">Enroll Student</a></button></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
 
 			</table>
 		</main>
