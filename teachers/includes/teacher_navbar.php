@@ -11,7 +11,7 @@
 			<a href="../students/students.php">Students</a>
 		</li>
 		<li>
-			<a href="../teachers/teachers.php">Teachers</a>
+			<a href="../teachers.php">Teachers</a>
 		</li>
 		<li>
 			<a href="../library.php">Library</a>

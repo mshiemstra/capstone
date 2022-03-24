@@ -6,14 +6,14 @@
 	$delete_enrollment = "DELETE FROM enrollment WHERE `student_id` = '$id'";
 
 	if(mysqli_query($conn, $delete_student)){
-		header("Location: students.php");
+		header("Location: ../students.php");
 	} 
 	else{
 		echo "ERROR: Unable to execute" . " " . $delete_student . mysqli_error($conn);
 	}
 
 	if(mysqli_query($conn, $delete_enrollment)){
-		header("Location: students.php");
+		header("Location: ../students.php");
 	} 
 	else{
 		echo "ERROR: Unable to execute" . " " . $delete_enrollment . mysqli_error($conn);

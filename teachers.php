@@ -2,7 +2,7 @@
 <html>
 	<head>
 		
-		<?php include 'includes/teacher_head.php'; ?>
+		<?php include 'includes/head.php'; ?>
 
 	</head>
 	<body>
@@ -17,9 +17,9 @@
 		 </section>
 		<header class="header">
 			<h1>
-				<a href="../index.php"><img id="logo" src="../images/logo.png"></a>
+				<a href="index.php"><img id="logo" src="images/logo.png"></a>
 			</h1>
-			<?php include "includes/teacher_navbar.php" ?>
+			<?php include "includes/navbar.php" ?>
 		</header>
 		<main>
 
@@ -44,7 +44,7 @@
 					if ($result->num_rows > 0) {				  
 					  while($row = mysqli_fetch_array($result)) {
 					    echo "<tr>";
-					    $link="delete_teacher.php?id=" . $row['teacher_id'];
+					    $link="teachers/delete_teacher.php?id=" . $row['teacher_id'];
 					    echo "<td><a id='delete' onClick=\"javascript: return confirm('Please confirm deletion');\" href='$link'>Delete</a></td>";
 					    echo "<td id='teacher_id'>" . $row["teacher_id"] . "</td><td>" . $row["teacher_fName"] . "</td><td>" . $row["teacher_lName"] . "</td><td>" . $row["teacher_street1"] . "</td><td>" . $row["teacher_street2"] . "</td><td>" . $row["teacher_city"] . "</td><td>" . $row["teacher_state"] . "</td><td>" . $row["teacher_zipcode"] . "</td><td>" . $row["teacher_phone"] . "</td><td>" . $row["teacher_email"] . "</td></tr>";
 					  }
@@ -58,7 +58,7 @@
 
 			</table>
 
-			<button id="new_teacher"><a href="new_teacher.php">Add teacher</a></button>
+			<button id="new_teacher"><a href="teachers/new_teacher.php">Add teacher</a></button>
 			
 
 		</main>

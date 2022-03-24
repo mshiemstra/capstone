@@ -14,4 +14,4 @@
 			<script src="../students/functions/new_student_function.js"></script>
 			
 			<?php include '../includes/db.php'; ?>
-			<?php include '../students/functions/student_formhandling.php' ?>
+			<?php include '../students/functions/student_formhandling.php'; ?>

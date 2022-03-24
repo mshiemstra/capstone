@@ -4,14 +4,14 @@ $(document).ready(function(){
     .reduce((m, [ key, value ]) => Object.assign(m, { [key]: value }), {})
   );
 
-  $('#new_student_form').on('submit', function(e) {
+  $('#new_teacher_form').on('submit', function(e) {
     e.preventDefault();
     const json = serialize_form(this);
    // const json = {"name":"bob"};
     console.log(json);
     $.ajax({
       type: 'POST',
-      url: 'new_student_process.php',
+      url: 'new_teacher_process.php',
       dataType: 'json',
       data: json,
       contentType: 'application/json',
@@ -19,16 +19,16 @@ $(document).ready(function(){
         console.log(data);
         $('#result').text(data['message']);
         if(data['success']){
-          $('#student_id').val("");
-          $('#student_fName').val("");
-          $('#student_lName').val("");
-          $('#student_street1').val("");
-          $('#student_street2').val("");
-          $('#student_city').val("");
-          $('#student_state').val("");
-          $('#student_zipcode').val("");
-          $('#student_phone').val("");
-          $('#student_email').val("");
+          $('#teacher_id').val("");
+          $('#teacher_fName').val("");
+          $('#teacher_lName').val("");
+          $('#teacher_street1').val("");
+          $('#teacher_street2').val("");
+          $('#teacher_city').val("");
+          $('#teacher_state').val("");
+          $('#teacher_zipcode').val("");
+          $('#teacher_phone').val("");
+          $('#teacher_email').val("");
         }        
       }
     });

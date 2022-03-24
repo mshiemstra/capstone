@@ -2,7 +2,7 @@
 <html>
 	<head>
 		
-		<?php include 'includes/head.php'; ?>
+		<?php include 'includes/student_head.php'; ?>
 
 	</head>
 	<body>
@@ -16,12 +16,11 @@
 		 </section>
 		<header class="header">
 			<h1>
-				<a href="index.php"><img id="logo" src="images/logo.png"></a>
+				<a href="index.php"><img id="logo" src="../images/logo.png"></a>
 			</h1>
-			<?php include "includes/navbar.php" ?>
+			<?php include "includes/student_navbar.php" ?>
 		</header>
 		<main>
-
 			<table id="results_list">
 				<tr class="th">					
 					<td>ID</td>
@@ -40,10 +39,15 @@
 
 		
 					$result = $conn->query($sql);
-
+					$student_id = '0';
+					$student_fName = '';
+					$student_lName = '';
 					if ($result->num_rows > 0) {				  
 					  while($row = mysqli_fetch_array($result)) {
-					    echo "<tr><td>" . $row["student_id"] . "</td><td>" . $row["student_fName"] . "</td><td>" . $row["student_lName"] . "</td><td>" . $row["class_desc"] . "</td><td>" . $row["class_name"] . "</td><td>" . $row["class_teacher"] . "</td><td>" . $row["class_term"] . "</td></tr>";					
+					    echo "<tr><td>" . $row["student_id"] . "</td><td>" . $row["student_fName"] . "</td><td>" . $row["student_lName"] . "</td><td>" . $row["class_desc"] . "</td><td>" . $row["class_name"] . "</td><td>" . $row["class_teacher"] . "</td><td>" . $row["class_term"] . "</td></tr>";		
+					    $student_id = $row['student_id'];
+					    $student_fName = $row['student_fName'];
+					    $student_lName = $row['student_lName'];
 					  }
 					} 
 					else {
@@ -53,7 +57,7 @@
 					$conn->close();
 				?>
 				<tr>
-					<td><button id="enroll_student"><a href="enroll_student.php">Enroll Student</a></button></td>
+					<td><button id="enroll_student"><a href="enroll_student.php?id=<?php echo $student_id . ' ' . $student_fName . ' ' . $student_lName ?>">Enroll Student</a></button></td>
 					<td></td>
 					<td></td>
 					<td></td>

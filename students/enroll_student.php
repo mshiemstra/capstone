@@ -3,7 +3,7 @@
 <html>
 	<head>
 		
-		<?php include 'includes/head.php'; ?>
+		<?php include '../students/includes/student_head.php'; ?>
 
 	</head>
 	<body>
@@ -17,21 +17,22 @@
 		 </section>
 		<header class="header">
 			<h1>
-				<a href="index.php"><img id="logo" src="images/logo.png"></a>
+				<a href="../index.php"><img id="logo" src="../images/logo.png"></a>
 			</h1>
-			<?php include "includes/navbar.php" ?>
+			<?php include "includes/student_navbar.php" ?>
 		</header>
 		<main>
-		   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-				<form id="enrollment_form" action="javascript:void(0)" method="post">
-				  <input type="text" id="class_id" name="class_id">
-				  <input type="text" id="student_id" name="student_id">				 
-				  <button value="Submit" type="submit">Submit</button>
-				</form>
+			<form id="enrollment_form" action="javascript:void(0)" method="post">
+			  <input type="hidden" id="student_id" name="student_id" value="<?php $_GET['id'] ?>">
+			  <?php echo $_GET['id'] ?>
 
-				<div id="result">
-					start
-				</div>
+			  <input type="text" id="class_id" name="class_id">				  				 
+			  <button value="Submit" type="submit">Submit</button>
+			</form>
+
+			<div id="result">
+				start
+			</div>
 
 				<script src="js/enroll_student_function.js"></script>
 
