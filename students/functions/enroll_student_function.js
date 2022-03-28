@@ -9,7 +9,7 @@ $('#enrollment_form').on('submit', function(e) {
   console.log(json);
   $.ajax({
     type: 'POST',
-    url: 'enroll_student_process.php',
+    url: 'functions/enroll_student_process.php',
     dataType: 'json',
     data: json,
     contentType: 'application/json',

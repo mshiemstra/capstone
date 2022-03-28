@@ -11,7 +11,7 @@ $(document).ready(function(){
     console.log(json);
     $.ajax({
       type: 'POST',
-      url: 'new_student_process.php',
+      url: 'functions/new_student_process.php',
       dataType: 'json',
       data: json,
       contentType: 'application/json',

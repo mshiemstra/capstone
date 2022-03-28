@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<?php include 'includes/student_head.php'; ?>
+		<?php include '../students/includes/student_head.php'; ?>
 	</head>
 	<body>
 		<section class="topbar">
@@ -16,10 +16,10 @@
 			<h1>
 				<a href="index.php"><img id="logo" src="../images/logo.png"></a>
 			</h1>
-			<?php include "includes/student_navbar.php" ?>
+			<?php include "../students/includes/student_navbar.php" ?>
 		</header>
 		<main>
-			<section id="new_student_form">
+			<section class="new_student_form">
 				<form method="post" id="new_student_form" action="javascript:void(0)">
 					<table>
 						<tr>

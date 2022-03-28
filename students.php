@@ -11,7 +11,7 @@
 		    <form action="/action_page.php">
 		      <input type="text" placeholder="Search.." name="search">
 		      <button type="submit"><i class="fa fa-search"></i></button>
-		      <script src="functions/student_formValidation.js"></script>
+		    <!--  <script src="student/functions/student_formValidation.js"></script> -->
 		    </form>
 		  </div>
 		 </section>

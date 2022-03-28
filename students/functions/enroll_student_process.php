@@ -1,6 +1,6 @@
 <?php
 
-include '../includes/db.php';
+include '../../includes/db.php';
 
 $data = json_decode(file_get_contents('php://input'), true);
 

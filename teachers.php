@@ -23,10 +23,10 @@
 		</header>
 		<main>
 
-			<table id="teacher_list">
-				<tr class="th">
-					<td></td>					
-					<td>Teacher ID</td>
+			<table class="table" id="teacher_list">
+				<tr class="th">	
+					<td>									
+					<td>teacher ID</td>
 					<td>First Name</td>
 					<td>Last Name</td>
 					<td>Street Address</td>
@@ -36,6 +36,7 @@
 					<td>Zipcode</td>
 					<td>Phone Number</td>
 					<td>Email Address</td>
+					<td></td>
 				</tr>
 				<?php
 					$sql = "SELECT * FROM teacher ORDER BY teacher_id ASC";
@@ -44,9 +45,13 @@
 					if ($result->num_rows > 0) {				  
 					  while($row = mysqli_fetch_array($result)) {
 					    echo "<tr>";
-					    $link="teachers/delete_teacher.php?id=" . $row['teacher_id'];
-					    echo "<td><a id='delete' onClick=\"javascript: return confirm('Please confirm deletion');\" href='$link'>Delete</a></td>";
-					    echo "<td id='teacher_id'>" . $row["teacher_id"] . "</td><td>" . $row["teacher_fName"] . "</td><td>" . $row["teacher_lName"] . "</td><td>" . $row["teacher_street1"] . "</td><td>" . $row["teacher_street2"] . "</td><td>" . $row["teacher_city"] . "</td><td>" . $row["teacher_state"] . "</td><td>" . $row["teacher_zipcode"] . "</td><td>" . $row["teacher_phone"] . "</td><td>" . $row["teacher_email"] . "</td></tr>";
+					    $select = "teachers/teacher_info.php?id=" . $row['teacher_id'];
+					    echo "<td><a id='select' href='$select'>Select</a></td>";
+
+					    echo "<td id='teacher_id'>" . $row["teacher_id"] . "</td><td>" . $row["teacher_fName"] . "</td><td>" . $row["teacher_lName"] . "</td><td>" . $row["teacher_street1"] . "</td><td>" . $row["teacher_street2"] . "</td><td>" . $row["teacher_city"] . "</td><td>" . $row["teacher_state"] . "</td><td>" . $row["teacher_zipcode"] . "</td><td>" . $row["teacher_phone"] . "</td><td>" . $row["teacher_email"] . "</td>";
+
+					    $delete = "teachers/delete_teacher.php?id=" . $row['teacher_id'];
+					    echo "<td><a id='delete' onClick=\"javascript: return confirm('Please confirm deletion');\" href='$delete'>Delete</a></td></tr>";
 					  }
 					} 
 					else {
@@ -62,5 +67,6 @@
 			
 
 		</main>
+		
 	</body>
 </html>

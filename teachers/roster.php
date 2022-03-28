@@ -3,7 +3,7 @@
 <html>
 	<head>
 		
-		<?php include 'includes/student_head.php'; ?>
+		<?php include '../teachers/includes/teacher_head.php'; ?>
 
 	</head>
 	<body>
@@ -19,11 +19,11 @@
 			<h1>
 				<a href="../index.php"><img id="logo" src="../images/logo.png"></a>
 			</h1>
-			<?php include "includes/student_navbar.php" ?>
+			<?php include "includes/teacher_navbar.php" ?>
 		</header>
 		<main>
 			<form id="enrollment_form" action="javascript:void(0)" method="post">
-			  <input type="hidden" id="student_id" name="student_id" value="<?php $_GET['id'] ?>">
+			  <input type="hidden" id="teacher_id" name="teacher_id" value="<?php $_GET['id'] ?>">
 			  <?php echo $_GET['id'] ?>
 
 			  <input type="text" id="class_id" name="class_id">				  				 
@@ -34,7 +34,7 @@
 				start
 			</div>
 
-				<script src="functions/enroll_student_function.js"></script>
+				<script src="js/_teacher_function.js"></script>
 
 		</main>
 	</body>
@@ -69,7 +69,7 @@ Example:
 function jqueryPostButtonAction() {
 
     let url = "api/form_test_servlet";
-    let myFieldValue = $("#classid or student id Field").val();
+    let myFieldValue = $("#classid or teacher id Field").val();
     let dataToServer = { fieldname : myFieldValue }; -- Name Value Pair, separate by commas.
 
     $.post(url, dataToServer, function (dataFromServer) {
