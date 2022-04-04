@@ -4,7 +4,7 @@ include '../../includes/db.php';
 
 $data = json_decode(file_get_contents('php://input'), true);
 
-$teacher_id = $data['teacher_id'];
+$teacher_id = $data['person_id'];
 $teacher_fName = $data['teacher_fName'];
 $teacher_lName = $data['teacher_lName'];
 $teacher_street1 = $data['teacher_street1'];
@@ -31,25 +31,26 @@ $teacher_email = mysqli_real_escape_string($conn, $teacher_email);
 
 
 
-$sql = "SELECT * FROM teacher WHERE teacher_id = $teacher_id";
+$sql = "SELECT * FROM person WHERE person_id = $teacher_id";
 $result = $conn->query($sql);
 
 if($result->num_rows == 1) {
-	$message = 'teacher has already been added.';
+	$message = 'Teacher has already been added.';
 	echo "{\"message\":\"$message\", \"success\":false}";
 	exit;
 }
-
-
-$sql = "INSERT INTO `teacher` VALUES ($teacher_id, '$teacher_fName', '$teacher_lName', '$teacher_street1', '$teacher_street2', '$teacher_city', '$teacher_state', '$teacher_zipcode', '$teacher_phone', '$teacher_email')";
-
-if (mysqli_query($conn,$sql)) {
-   $message = 'Record Added';
-   echo "{\"message\":\"$message\", \"success\":true}";
-}
 else {
-	$message = "error adding user in database $sql";
-	echo "{\"message\":\"$message\", \"success\":false}";
+
+	$sql = "INSERT INTO person VALUES ($teacher_id, '$teacher_fName', '$teacher_lName', '$teacher_street1', '$teacher_street2', '$teacher_city', '$teacher_state', '$teacher_zipcode', '$teacher_phone', '$teacher_email', 'T')";
+
+	if (mysqli_query($conn,$sql)) {
+	   $message = 'Record Added';
+	   echo "{\"message\":\"$message\", \"success\":true}";
+	}
+	else {
+		$message = "error adding user in database $sql";
+		echo "{\"message\":\"$message\", \"success\":false}";
+	}
 }
 
 

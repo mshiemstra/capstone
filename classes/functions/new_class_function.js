@@ -4,14 +4,14 @@ $(document).ready(function(){
     .reduce((m, [ key, value ]) => Object.assign(m, { [key]: value }), {})
   );
 
-  $('#new_teacher_form').on('submit', function(e) {
+  $('#new_class_form').on('submit', function(e) {
     e.preventDefault();
     const json = serialize_form(this);
    // const json = {"name":"bob"};
     console.log(json);
     $.ajax({
       type: 'POST',
-      url: 'functions/new_teacher_process.php',
+      url: 'functions/new_class_process.php',
       dataType: 'json',
       data: json,
       contentType: 'application/json',
@@ -19,16 +19,11 @@ $(document).ready(function(){
         console.log(data);
         $('#result').text(data['message']);
         if(data['success']){
+          $('#class_id').val("");
+          $('#class_term').val("");
+          $('#class_desc').val("");
+          $('#class_name').val("");
           $('#person_id').val("");
-          $('#teacher_fName').val("");
-          $('#teacher_lName').val("");
-          $('#teacher_street1').val("");
-          $('#teacher_street2').val("");
-          $('#teacher_city').val("");
-          $('#teacher_state').val("");
-          $('#teacher_zipcode').val("");
-          $('#teacher_phone').val("");
-          $('#teacher_email').val("");
         }        
       }
     });

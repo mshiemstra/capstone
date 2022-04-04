@@ -2,8 +2,8 @@
 	include '../includes/db.php';
 	$id = $_REQUEST['id'];
 	$id = mysqli_real_escape_string($conn, $id);
-	$delete_student = "DELETE FROM student WHERE `student_id` = '$id'";	
-	$delete_enrollment = "DELETE FROM enrollment WHERE `student_id` = '$id'";
+	$delete_student = "DELETE FROM person WHERE `person_id` = '$id'";	
+	$delete_enrollment = "DELETE FROM enrollment WHERE `person_id` = '$id'";
 
 	if(mysqli_query($conn, $delete_student)){
 		header("Location: ../students.php");

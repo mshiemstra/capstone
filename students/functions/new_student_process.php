@@ -31,25 +31,26 @@ $student_email = mysqli_real_escape_string($conn, $student_email);
 
 
 
-$sql = "SELECT * FROM student WHERE student_id = $student_id";
+$sql = "SELECT * FROM person WHERE person_id = $student_id";
 $result = $conn->query($sql);
 
 if($result->num_rows == 1) {
-	$message = 'Student has already been added.';
+	$message = 'student has already been added.';
 	echo "{\"message\":\"$message\", \"success\":false}";
 	exit;
 }
-
-
-$sql = "INSERT INTO `student` VALUES ($student_id, '$student_fName', '$student_lName', '$student_street1', '$student_street2', '$student_city', '$student_state', '$student_zipcode', '$student_phone', '$student_email')";
-
-if (mysqli_query($conn,$sql)) {
-   $message = 'Record Added';
-   echo "{\"message\":\"$message\", \"success\":true}";
-}
 else {
-	$message = "error adding user in database $sql";
-	echo "{\"message\":\"$message\", \"success\":false}";
+
+	$sql = "INSERT INTO person VALUES ($student_id, '$student_fName', '$student_lName', '$student_street1', '$student_street2', '$student_city', '$student_state', '$student_zipcode', '$student_phone', '$student_email', 'S')";
+
+	if (mysqli_query($conn,$sql)) {
+	   $message = 'Record Added';
+	   echo "{\"message\":\"$message\", \"success\":true}";
+	}
+	else {
+		$message = "error adding user in database $sql";
+		echo "{\"message\":\"$message\", \"success\":false}";
+	}
 }
 
 

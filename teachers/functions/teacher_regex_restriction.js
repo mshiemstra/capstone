@@ -6,7 +6,7 @@ $(document).ready(function(){
     inputPhone.addEventListener('input', formatPhone);
 
 
-    var teacher_id_restrict = document.getElementById('teacher_id');
+    var teacher_id_restrict = document.getElementById('person_id');
     var teacher_fName_restrict = document.getElementById('teacher_fName');
     var teacher_lName_restrict = document.getElementById('teacher_lName');
     var teacher_street1_restrict = document.getElementById('teacher_street1');

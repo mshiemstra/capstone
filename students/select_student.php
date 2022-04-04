@@ -2,7 +2,7 @@
 	include '../includes/db.php';
 	$id = $_REQUEST['id'];
 	$id = mysqli_real_escape_string($conn, $id);
-	$sql = "SELECT student_id FROM student WHERE `student_id` = '$id'";	
+	$sql = "SELECT person_id FROM person WHERE `person_id` = '$id'";	
 
 	if(mysqli_query($conn, $sql)){
 		// STOPS WORKING -- WHY?

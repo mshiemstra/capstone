@@ -29,8 +29,8 @@
 			            	</td>
 			            </tr>
 						<tr>
-							<td><label>teacher ID<span class="required">*</span></label></td>
-							<td><input type="text" id="teacher_id" name="teacher_id" ></td>
+							<td><label>Teacher ID<span class="required">*</span></label></td>
+							<td><input type="text" id="person_id" name="person_id" ></td>
 						</tr>
 						<tr>
 							<td></td>

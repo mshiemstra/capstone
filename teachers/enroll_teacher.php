@@ -3,7 +3,7 @@
 <html>
 	<head>
 		
-		<?php include 'includes/student_head.php'; ?>
+		<?php include 'includes/teacher_head.php'; ?>
 
 	</head>
 	<body>
@@ -19,7 +19,7 @@
 			<h1>
 				<a href="../index.php"><img id="logo" src="../images/logo.png"></a>
 			</h1>
-			<?php include "includes/student_navbar.php" ?>
+			<?php include "includes/teacher_navbar.php" ?>
 		</header>
 		<main>
 			<form id="enrollment_form" action="javascript:void(0)" method="post">
@@ -36,7 +36,7 @@
 				start
 			</div>
 
-				<script src="functions/enroll_student_function.js"></script>
+				<script src="functions/enroll_teacher_function.js"></script>
 
 		</main>
 	</body>

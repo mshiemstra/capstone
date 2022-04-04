@@ -28,14 +28,15 @@
 					<td>Last Name</td>
 					<td>Class Description</td>
 					<td>Class Name</td>
-					<td>Instructor</td>
+					<td>Instructor First Name</td>
+					<td>Instructor Last Name</td>
 					<td>Term</td>				
 				</tr>
 				<?php
 					$id = $_REQUEST['id'];
 					$id = mysqli_real_escape_string($conn, $id);
 
-					$sql = "SELECT * FROM class AS C, enrollment AS E, student AS S WHERE E.class_id = C.class_id AND E.student_id = S.student_id AND E.student_id = $id GROUP BY class_name ASC";
+					$sql = "SELECT * FROM class AS C, enrollment AS E, person AS P WHERE E.class_id = C.class_id AND E.person_id = P.person_id AND E.person_id = $id GROUP BY class_name ASC";
 
 		
 					$result = $conn->query($sql);
@@ -44,10 +45,10 @@
 					$student_lName = '';
 					if ($result->num_rows > 0) {				  
 					  while($row = mysqli_fetch_array($result)) {
-					    echo "<tr><td>" . $row["student_id"] . "</td><td>" . $row["student_fName"] . "</td><td>" . $row["student_lName"] . "</td><td>" . $row["class_desc"] . "</td><td>" . $row["class_name"] . "</td><td>" . $row["class_teacher"] . "</td><td>" . $row["class_term"] . "</td></tr>";		
-					    $student_id = $row['student_id'];
-					    $student_fName = $row['student_fName'];
-					    $student_lName = $row['student_lName'];
+					    echo "<tr><td>" . $row["person_id"] . "</td><td>" . $row["person_fName"] . "</td><td>" . $row["person_lName"] . "</td><td>" . $row["class_desc"] . "</td><td>" . $row["class_name"] . "</td><td>" . $row["person_fName"] . "</td><td>" . $row["person_lName"] . "</td><td>" . $row["class_term"] . "</td></tr>";		
+					    $student_id = $row['person_id'];
+					    $student_fName = $row['person_fName'];
+					    $student_lName = $row['person_lName'];
 					  }
 					} 
 					else {
@@ -57,7 +58,7 @@
 					$conn->close();
 				?>
 				<tr>
-					<td><button id="enroll_student"><a href="enroll_student.php?id=<?php echo $student_id . ' ' . $student_fName . ' ' . $student_lName ?>">Enroll Student</a></button></td>
+					<td><button id="enroll_student"><a href="enroll_student.php?id=<?php echo $id?>">Enroll Student</a></button></td>
 					<td></td>
 					<td></td>
 					<td></td>

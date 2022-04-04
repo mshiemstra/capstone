@@ -20,7 +20,7 @@ $sql = "SELECT * FROM person WHERE person_id = $person_id";
 $result = $conn->query($sql);
 
 if($result->num_rows == 0) {
-	$message = 'No student record found';
+	$message = 'No teaher record found';
 	echo "{\"message\":\"$message\", \"success\":false}";
 	exit;
 }
@@ -40,7 +40,7 @@ $sql = "SELECT * FROM enrollment WHERE class_id = $class_id";
 $result = $conn->query($sql);
 
 if($result->num_rows == 1) {
-	$message = 'Student is already enrolled in that class';
+	$message = 'teaher is already enrolled in that class';
 	echo "{\"message\":\"$message\", \"success\":false}";
 	exit;
 

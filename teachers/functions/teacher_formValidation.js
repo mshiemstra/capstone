@@ -2,7 +2,7 @@ $(document).ready(function(){
   //alert('ready');
 
   function trimString() {
-    var teacher_id = $("#teacher_id").text();
+    var teacher_id = $("#person_id").text();
     var teacher_idTrim = $.trim(teacher_id);
 
     var teacher_fNmae = $("#teacher_fName").text();
@@ -31,7 +31,7 @@ $(document).ready(function(){
 
 
 
-    $("#teacher_id").html(teacher_idTrim);
+    $("#person_id").html(teacher_idTrim);
     $("#teacher_fName").html(teacher_fNameTrim);
     $("#teacher_lName").html(teacher_lNameTrim);
     $("#teacher_street1").html(teacher_address1Trim);
@@ -46,7 +46,7 @@ $(document).ready(function(){
 
   function teacher_idNumber() {
    
-      let teacher_id = $("#teacher_id").val();      
+      let teacher_id = $("#pereson_id").val();      
       let patt = new RegExp(/^[0-9]*$/);
       let res = patt.exec(teacher_id);
 
@@ -59,7 +59,7 @@ $(document).ready(function(){
       }
       else {
         $('#teacher_error1').html('');
-        $('#teacher_id').css('border', '2px solid #BDBDBD');
+        $('#person_id').css('border', '2px solid #BDBDBD');
         
         return validForm = true;
     }
@@ -284,7 +284,7 @@ $(document).ready(function(){
 
 
 
-  $('#teacher_id').blur(teacher_idNumber);
+  $('#person_id').blur(teacher_idNumber);
   $('#teacher_fName').blur(teacher_firstname);
   $('#teacher_lName').blur(teacher_lastname);
   $('#teacher_street1').blur(teacher_addressOne);
@@ -310,7 +310,7 @@ $(document).ready(function(){
 
 
     if(validForm == true){
-      var teacher_id = $('#teacher_id').val();
+      var teacher_id = $('#person_id').val();
       var teacher_fName = $('#teacher_fName').val();
       var teacher_lName = $('#teacher_lName').val();
       var teacher_street1 = $('#teacher_street1').val();
