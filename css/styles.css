@@ -16,8 +16,6 @@ body, .content {
 	border-bottom:1px solid #000;
 }
 
-
-
 .topbar a {
   float: left;
   display: block;
@@ -47,11 +45,6 @@ body, .content {
   background-color: #b20838;
 }
 
-::placeholder {
-	color: #FFF;
-	opacity: 0.7;
-}
-
 .topbar .search-container button {
   float: right;
   height: 26px;
@@ -69,11 +62,11 @@ body, .content {
 
 main {
 	min-height: 350px;
-	width: 96%;
+	width: 100%;
 	margin-top: 1%;
 	padding: 2%;
 	background: #FFF;
-	overflow-x: scroll ;
+/*	overflow-x: scroll ;*/
 }
 
 .content {
@@ -95,25 +88,16 @@ header h1 {
 	margin-left: 40px;
 	float: left;
 	font-family: EB Garamond, serif;
-	/*font-family: adobe-garamond-pro, serif;*/
 	text-transform: uppercase;
 	line-height: 31px;
 	font-stretch: ultra-condensed!important;
 }
 
-h2 {
-	margin-bottom: 5%;
-	text-decoration: underline;
-}
-
-
 #logo {
 	clear: both;
 	float: left;
 	width: 66.5%;
-	margin-top: 5%;
 }
-
 
 nav {
 	height: 40px;
@@ -148,11 +132,6 @@ nav ul li a:hover {
 	color: #ffda09;
 }
 
-
-li {
-	list-style-type: none;
-}
-
 button {
 	height: 19px;
 	margin: 12px 8px 0 0;
@@ -161,47 +140,6 @@ button {
 	text-transform: uppercase;
 	font-size: 13px;
 	background-color: #eeb41e;
-}
-
-
-input{
-	margin-top: 5%;
-	margin-bottom:20px;
-	padding:2%;
-	border:3px solid #ddd;
-	box-shadow:0 0 2px;	
-}
-
-
-.display_section{
-	float:left;
-	height:593px;
-	width:290px;
-	margin-top:0;
-	margin-right:20px;
-	padding:2%;
-	text-align:center;
-	border:1px solid #000;
-	border-radius:4px;
-	box-shadow:0 0 5px #000;
-	background-color:#fff;
-}
-
-.form_section{
-	float:left;
-	height:600px;
-	width:575px;
-	padding-top:30px;
-	border:1px solid #000;
-	border-radius:4px;
-	overflow:auto;
-	box-shadow:0 0 5px #000;
-	text-align:center;
-	background-color:#fff;
-} 
-
-.results tr td {
-	text-align: left;
 }
 
 .letter_grade {
@@ -217,17 +155,13 @@ input{
 	border-collapse: collapse;
 }
 
-.thead {
-	color: #FFF;
-	background-color:#6b0623;
-}
-
-th {					
-	height:30px;
+.table-bordered > tbody > tr > td {
+	font-weight: 100;
 }
 
 #reset {
 	margin-top: 100px;
+	padding-left: 1%;
 }
 
 #search {
@@ -239,29 +173,36 @@ th {
 	color: #FFF;
 }
 
-
-iframe {
-	width: 100%;
+#student_error1, #student_error2, #student_error3, #student_error4, 
+#student_error5, #student_error6, #student_error7, #student_error8,
+#student_error9, #student_error10, #teacher_error1, #teacher_error2, 
+#teacher_error3, #teacher_error4, #teacher_error5, #teacher_error6, 
+#teacher_error7, #teacher_error8, #teacher_error9, #teacher_error10,
+#class_error1, #class_error2, #class_error3 {
+	color:red;
 }
 
-
-#student_list .th, #teacher_list .th, #classes_list .th, #results_list .th {
-	text-decoration: underline;
+.required {
+	color:red;
 }
 
-
-#delete .th {
-	text-decoration: none;
+input[type=text], input[type=email], select {
+	background-color: lightyellow;
 }
 
-#student_list, #teacher_list {
-	width: 125%;
+input[type=submit], input[type=reset] {
+	margin-left: 2%;
+	padding: 0.25%;
+	border-radius: 5px;
+	border: 1px solid #444444;
+	font-size: 16px;
+	cursor: pointer;
 }
 
-#enrollment_list, #classes_list, #results_list {
-	width: 100%;
+input[type=submit]:focus, input[type=reset]:focus {
+	outline: 0;
 }
 
-#enrollment_list .th {
-	text-decoration: underline;
+input[type=submit]:hover, input[type=reset]:hover {
+	background-color: lightgrey;
 }

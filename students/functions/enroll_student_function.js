@@ -17,8 +17,8 @@ $('#enrollment_form').on('submit', function(e) {
         console.log(data);
         $('#result').text(data['message']);
         if(data['success']){
-          $('#class_id').val("");
           $('#person_id').val("");
+          $('#class_id').val("");          
         }
       //  console.log('something');
     }

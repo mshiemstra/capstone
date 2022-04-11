@@ -16,16 +16,6 @@ $role = mysqli_real_escape_string($conn, $role);
 
 
 
-$sql = "SELECT * FROM person WHERE person_id = $person_id";
-$result = $conn->query($sql);
-
-if($result->num_rows == 0) {
-	$message = 'No teaher record found';
-	echo "{\"message\":\"$message\", \"success\":false}";
-	exit;
-}
-
-
 $sql = "SELECT * FROM class WHERE class_id = $class_id";
 $result = $conn->query($sql);
 
@@ -36,11 +26,23 @@ if($result->num_rows == 0) {
 }
 
 
-$sql = "SELECT * FROM enrollment WHERE class_id = $class_id";
+
+$sql = "SELECT * FROM person WHERE person_id = $person_id";
+$result = $conn->query($sql);
+
+if($result->num_rows == 0) {
+	$message = 'No teacher record found';
+	echo "{\"message\":\"$message\", \"success\":false}";
+	exit;
+}
+
+
+
+$sql = "SELECT * FROM enrollment WHERE class_id = $class_id AND person_id = $person_id";
 $result = $conn->query($sql);
 
 if($result->num_rows == 1) {
-	$message = 'teaher is already enrolled in that class';
+	$message = 'Teacher is already enrolled in that class';
 	echo "{\"message\":\"$message\", \"success\":false}";
 	exit;
 
@@ -55,7 +57,7 @@ if (mysqli_query($conn,$sql)) {
 
 }
 else {
-	$message = "error adding user in database $sql";
+	$message = "Error adding user in database $sql";
 }
 
 echo "{\"message\":\"$message\", \"success\":true}";

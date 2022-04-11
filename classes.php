@@ -22,39 +22,47 @@
 		</header>
 		<main>
 
-			<table id="classes_list">
-				<tr class="th">					
-					<td>Class ID</td>
-					<td>Term</td>
-					<td>Class Description</td>
-					<td>Class Name</td>
-					<td>Instructor First Name</td>
-					<td>Instructor Last Name</td>
-					<td># of Students</td>				
-				</tr>
-				<?php
+			<table class="table table-bordered">
+				<thead>
+					<tr class="th">					
+						<td>Class ID</td>
+						<td>Term</td>
+						<td>Class Description</td>
+						<td>Class Name</td>
+						<td>Instructor First Name</td>
+						<td>Instructor Last Name</td>
+						<td># of Students</td>				
+					</tr>
+				</thead>
+				<tbody>
+					<?php
 
-					$sql = "SELECT C.class_id, C.class_term, C.class_desc, C.class_name, C.person_id, P.person_id, P.person_fName, P.person_lName, COUNT(*) AS student_count FROM class AS C, enrollment AS E, person AS P WHERE E.class_id = C.class_id AND C.person_id = P.person_id GROUP BY class_id";
+						$sql = "SELECT C.class_id, C.class_term, C.class_desc, C.class_name, CI.person_fName AS instructor_fName, CI.person_lName AS instructor_lName, COUNT(*) AS student_count
+							FROM class AS C, class_instructors AS CI, enrollment AS E
+							WHERE C.class_id = E.class_id
+							AND E.person_id = CI.person_id 
+							GROUP BY C.class_id ASC
+						";
+			
+						$result = $conn->query($sql);
 
-		
-					$result = $conn->query($sql);
+						if ($result->num_rows > 0) {				  
+						  while($row = mysqli_fetch_array($result)) {
+						    $select = "classes/class_info.php?id=" . $row['class_id'];
 
-					if ($result->num_rows > 0) {				  
-					  while($row = mysqli_fetch_array($result)) {
-					    echo "<tr><td>" . $row["class_id"] . "</td><td>" . $row["class_term"] . "</td><td>" . $row["class_desc"] . "</td><td>" . $row["class_name"] . "</td><td>" . $row["person_fName"] . "</td><td>" . $row["person_lName"] ."</td><td>" . $row["student_count"] . "</td></tr>";					
-					  }
-					} 
-					else {
-					  echo "0 results";
-					}
+						    echo "<tr><td>" . "<a id='select' href='$select'>Select</a></td><td>" . $row["class_id"] . "</td><td>" . $row["class_term"] . "</td><td>" . $row["class_desc"] . "</td><td>" . $row["class_name"] . "</td><td>" . $row["instructor_fName"] . "</td><td>" . $row["instructor_lName"] ."</td><td>" . $row["student_count"] . "</td></tr>";					
+						  }
+						} 
+						else {
+						  echo "0 results";
+						}
 
-					$conn->close();
-				?>
+					//	echo $sql;
 
+						$conn->close();
+					?>
 
-
-
-
+				</tbody>
 			</table>
 
 			<button id="new_student"><a href="classes/new_class.php">Add Class</a></button>

@@ -4,14 +4,14 @@
 		<?php include '../students/includes/student_head.php'; ?>
 	</head>
 	<body>
-		<section class="topbar">
+<!--		<section class="topbar">
 		  <div class="search-container">
 		    <form action="/action_page.php">
 		      <input type="text" placeholder="Search.." name="search">
 		      <button type="submit"><i class="fa fa-search"></i></button>
 		    </form>
 		  </div>
-		 </section>
+		 </section> -->
 		<header class="header">
 			<h1>
 				<a href="index.php"><img id="logo" src="../images/logo.png"></a>
@@ -20,77 +20,81 @@
 		</header>
 		<main>
 			<section class="new_student_form">
-				<form method="post" id="new_student_form" action="javascript:void(0)">
-					<table>
-						<tr>
-							<td></td>
-			                <td>
-			            		<span id="student_error1"></span>
-			            	</td>
-			            </tr>
-						<tr>
-							<td><label>Student ID<span class="required">*</span></label></td>
-							<td><input type="text" id="student_id" name="student_id" ></td>
-						</tr>
-						<tr>
-							<td></td>
-			                <td>
-			            		<span id="student_error2"></span>
-			            	</td>
-			            </tr>
-						<tr>
-							<td><label>First Name<span class="required">*</span></label></td>
-							<td><input type="text" id="student_fName" name="student_fName" ></td>
-						</tr>
-						<tr>
-							<td></td>
-			                <td>
-			            		<span id="student_error3"></span>
-			            	</td>
-			            </tr>
-						<tr>
-							<td><label>Last Name<span class="required">*</span></label></td>
-							<td><input type="text" id="student_lName" name="student_lName" ></td>
-						</tr>
-						<tr>
-							<td></td>
-			                <td>
-			            		<span id="student_error4"></span>
-			            	</td>
-			            </tr>
-						<tr>
-							<td><label>Street Address<span class="required">*</span></label></td>
-							<td><input type="text" id="student_street1" name="student_street1" ></td>
-						</tr>
-						<tr>
-							<td></td>
-			                <td>
-			            		<span id="student_error5"></span>
-			            	</td>
-			            </tr>
-						<tr>
-							<td><label>Bldg/Ste/Lot #</label></td>
-							<td><input type="text" id="student_street2" name="student_street2"></td>						
-						</tr>
-						<tr>
-							<td></td>
-			                <td>
-			            		<span id="student_error6"></span>
-			            	</td>
-			            </tr>
-						<tr>
-							<td><label>City<span class="required">*</span></label></td>
-							<td><input type="text" id="student_city" name="student_city" ></td>
-						</tr>
-						<tr>
-							<td></td>
-			                <td>
-			            		<span id="student_error7"></span>
-			            	</td>
-			            </tr>
-						<tr>
-							<td><label>State<span class="required">*</span></label></td>
-							<td>
+				<form method="post" id="new_student_form" class="form-horizontal" action="javascript:void(0)">
+					<div class="form-group">
+						<div class="col-sm-10">
+			        		<span class="control-label col-sm-2" for="student_error1" id="student_error1"></span>
+			            </div>
+			        </div>
+					<div class="form-group">
+				      	<label class="control-label col-sm-2" for="student_id">Student ID<span class="required">*</span></label>
+				      	<div class="col-sm-10">
+							<input type="text" id="student_id" name="student_id">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10">
+			        		<span class="control-label col-sm-2" for="student_error2" id="student_error2"></span>
+			            </div>
+			        </div>
+					<div class="form-group">
+				      	<label class="control-label col-sm-2" for="student_fName">First Name<span class="required">*</span></label>
+				      	<div class="col-sm-10">
+							<input type="text" id="student_fName" name="student_fName" >
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10">
+			        		<span class="control-label col-sm-2" for="student_error3" id="student_error3"></span>
+			            </div>
+			        </div>
+					<div class="form-group">
+					    <label class="control-label col-sm-2" for="student_lName">Last Name<span class="required">*</span></label>
+					    <div class="col-sm-10">
+							<input type="text" id="student_lName" name="student_lName" >
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10">
+				        	<span class="control-label col-sm-2" for="student_error4" id="student_error4"></span>
+				        </div>
+				    </div>						
+					<div class="form-group">
+					    <label class="control-label col-sm-2" for="student_id">Street Address<span class="required">*</span></label>
+						<div class="col-sm-10">	
+							<input type="text" id="student_street1" name="student_street1" >
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10">
+			        		<span class="control-label col-sm-2" for="student_error5" id="student_error5"></span>
+			            </div>
+			        </div>
+			        <div class="form-group">
+					    <label class="control-label col-sm-2" for="student_street2">Bldg/Ste/Lot #</label>
+					    <div class="col-sm-10">
+							<input type="text" id="student_street2" name="student_street2">		
+						</div>			
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10">
+				        	<span class="control-label col-sm-2" for="student_error6" id="student_error6"></span>
+			            </div>
+			        </div>
+					<div class="form-group">
+					    <label class="control-label col-sm-2" for="student_city">City<span class="required">*</span></label>
+					    <div class="col-sm-10">
+							<input type="text" id="student_city" name="student_city" >
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10">
+			        		<span class="control-label col-sm-2" for="student_error7" id="student_error7"></span>
+			            </div>
+			        </div>
+					<div class="form-group">
+				      	<label class="control-label col-sm-2" for="student_state">State<span class="required">*</span></label>
+						<div class="col-sm-10">
 			                <select id="student_state" name="student_state" >
 			                    <option value="">--- Select ---</option>
 			                    <option value="AL">Alabama</option>
@@ -143,44 +147,45 @@
 			                    <option value="WV">West Virginia</option>
 			                    <option value="WI">Wisconsin</option>
 			                    <option value="WY">Wyoming</option>
-			                  </select>
-			                </td>
-						</tr>
-						<tr>
-							<td></td>
-			                <td>
-			            		<span id="student_error8"></span>
-			            	</td>
-			            </tr>
-						<tr>
-							<td><label>Zipcode<span class="required">*</span></label></td>
-							<td><input type="text" id="student_zipcode" name="student_zipcode" ></td>
-						</tr>
-						<tr>
-							<td></td>
-			                <td>
-			            		<span id="student_error9"></span>
-			            	</td>
-			            </tr>
-						<tr>
-							<td><label>Phone Number<span class="required">*</span></label></td>
-							<td><input type="text" maxlength="13" id="student_phone" name="student_phone" placeholder="Phone Number" ></td>
-						</tr>
-						<tr>
-							<td></td>
-			                <td>
-			            		<span id="student_error10"></span>
-			            	</td>
-			            </tr>
-						<tr>
-							<td><label>Email Address<span class="required">*</span></label></td>
-							<td><input type="email" id="student_email" name="student_email" ></td>
-						</tr>
-						<tr>
-							<td><input type="submit" name="submit" value="Submit"></td>
-							<td><input type="reset" name="reset" value="Reset" onclick='window.location.reload()'></td>
-						</tr>
-					</table>
+			                </select>
+		                </div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10">
+			        		<span class="control-label col-sm-2" for="email" id="student_error8"></span>
+			            </div>
+			        </div>
+					<div class="form-group">
+				    	<label class="control-label col-sm-2" for="student_zipcode">Zipcode<span class="required">*</span></label>
+				    
+				    	<div class="col-sm-10">
+							<input type="text" id="student_zipcode" name="student_zipcode" >
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10">
+			        		<span class="control-label col-sm-2" for="student_error9" id="student_error9"></span>
+			            </div>
+			        </div>
+					<div class="form-group">
+				    	<label class="control-label col-sm-2" for="student_phone">Phone Number<span class="required">*</span></label>
+				    	<div class="col-sm-10">
+							<input type="text" maxlength="13" id="student_phone" name="student_phone" placeholder="Phone Number" >
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10">
+			        		<span class="control-label col-sm-2" for="student_error10" id="student_error10"></span>
+			            </div>
+			        </div>
+					<div class="form-group">
+				    	<label class="control-label col-sm-2" for="student_email">Email Address<span class="required">*</span></label>
+				    	<div class="col-sm-10">
+							<input type="email" id="student_email" name="student_email" >
+						</div>
+					</div>
+					<input type="submit" name="submit" value="Submit">
+					<input type="reset" name="reset" value="Reset" onclick='window.location.reload()'>
 				</form>
 			</section>
 		</main>

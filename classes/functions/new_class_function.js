@@ -19,11 +19,9 @@ $(document).ready(function(){
         console.log(data);
         $('#result').text(data['message']);
         if(data['success']){
-          $('#class_id').val("");
           $('#class_term').val("");
           $('#class_desc').val("");
           $('#class_name').val("");
-          $('#person_id').val("");
         }        
       }
     });

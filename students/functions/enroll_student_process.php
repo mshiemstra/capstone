@@ -36,7 +36,7 @@ if($result->num_rows == 0) {
 }
 
 
-$sql = "SELECT * FROM enrollment WHERE class_id = $class_id";
+$sql = "SELECT * FROM enrollment WHERE person_id = $person_id AND class_id = $class_id";
 $result = $conn->query($sql);
 
 if($result->num_rows == 1) {
@@ -46,7 +46,7 @@ if($result->num_rows == 1) {
 
 }
 
-
+echo $sql;
 
 $sql = "INSERT INTO enrollment VALUES ($class_id, $person_id, '$role')";
 
@@ -57,6 +57,8 @@ if (mysqli_query($conn,$sql)) {
 else {
 	$message = "error adding user in database $sql";
 }
+
+
 
 echo "{\"message\":\"$message\", \"success\":true}";
 
