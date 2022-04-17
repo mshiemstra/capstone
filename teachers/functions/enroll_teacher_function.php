@@ -27,17 +27,6 @@ if($result->num_rows == 0) {
 
 
 
-$sql = "SELECT * FROM person WHERE person_id = $person_id";
-$result = $conn->query($sql);
-
-if($result->num_rows == 0) {
-	$message = 'No teacher record found';
-	echo "{\"message\":\"$message\", \"success\":false}";
-	exit;
-}
-
-
-
 $sql = "SELECT * FROM enrollment WHERE class_id = $class_id AND person_id = $person_id";
 $result = $conn->query($sql);
 

@@ -5,15 +5,7 @@
 		<?php include 'includes/student_head.php'; ?>
 
 	</head>
-	<body>
-		<section class="topbar">
-		  <div class="search-container">
-		    <form action="/action_page.php">
-		      <input type="text" placeholder="Search.." name="search">
-		      <button type="submit"><i class="fa fa-search"></i></button>
-		    </form>
-		  </div>
-		 </section>
+	<body>		
 		<header class="header">
 			<h1>
 				<a href="index.php"><img id="logo" src="../images/logo.png"></a>
@@ -21,17 +13,17 @@
 			<?php include "includes/student_navbar.php" ?>
 		</header>
 		<main>
-			<table class="table table-bordered">
+			<table id="student_info_list" class="nowrap">
 				<thead>
 					<tr class="th">					
-						<td>Student ID</td>
-						<td>First Name</td>
-						<td>Last Name</td>
-						<td>Class Description</td>
-						<td>Class Name</td>
-						<td>Instructor First Name</td>
-						<td>Instructor Last Name</td>
-						<td>Term</td>				
+						<th>Student ID</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Class Description</th>
+						<th>Class Name</th>
+						<th>Instructor First Name</th>
+						<th>Instructor Last Name</th>
+						<th>Term</th>				
 					</tr>
 				</thead>
 				<tbody>
@@ -68,7 +60,7 @@
 					  }
 					} 
 					else {
-					  echo "0 results";
+					 // echo "0 results";
 					}
 
 					$conn->close();

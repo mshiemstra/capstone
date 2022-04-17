@@ -4,7 +4,7 @@ include '../../includes/db.php';
 
 $data = json_decode(file_get_contents('php://input'), true);
 
-$teacher_id = $data['person_id'];
+$teacher_id = $data['teacher_id'];
 $teacher_fName = $data['teacher_fName'];
 $teacher_lName = $data['teacher_lName'];
 $teacher_street1 = $data['teacher_street1'];
@@ -48,7 +48,7 @@ else {
 	   echo "{\"message\":\"$message\", \"success\":true}";
 	}
 	else {
-		$message = "error adding user in database $sql";
+		$message = "Error adding user in database $sql";
 		echo "{\"message\":\"$message\", \"success\":false}";
 	}
 }

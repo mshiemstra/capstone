@@ -6,15 +6,6 @@
 
 	</head>
 	<body>
-		<section class="topbar">
-		  <div class="search-container">
-		    <form action="/action_page.php">
-		      <input type="text" placeholder="Search.." name="search">
-		      <button type="submit"><i class="fa fa-search"></i></button>
-		    <!--  <script src="teacher/functions/teacher_formValidation.js"></script> -->
-		    </form>
-		  </div>
-		 </section>
 		<header class="header">
 			<h1>
 				<a href="index.php"><img id="logo" src="images/logo.png"></a>
@@ -23,21 +14,21 @@
 		</header>
 		<main>
 
-			<table class="table table-bordered" id="teacher_list">
+			<table class="nowrap" id="teacher_list">
 				<thead>
 					<tr class="th">	
-						<td></td>									
-						<td>Teacher ID</td>
-						<td>First Name</td>
-						<td>Last Name</td>
-						<td>Street Address</td>
-						<td>Bldg/Ste/Lot</td>
-						<td>City</td>
-						<td>State</td>
-						<td>Zipcode</td>
-						<td>Phone Number</td>
-						<td>Email Address</td>
-						<td></td>
+						<th></th>									
+						<th>Teacher ID</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Street Address</th>
+						<th>Bldg/Ste/Lot</th>
+						<th>City</th>
+						<th>State</th>
+						<th>Zipcode</th>
+						<th>Phone Number</th>
+						<th>Email Address</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>

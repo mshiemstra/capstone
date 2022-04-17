@@ -6,59 +6,9 @@
 body, .content {
 	font-family: Open Sans, sans-serif;
 	font-weight: bolder;
-	background-color: #b20838;
+	background-color: #b20838!important;
 }
 
-.topbar {
-	height: 40px;
-	width: 100%;
-	background-color:#6b0623;
-	border-bottom:1px solid #000;
-}
-
-.topbar a {
-  float: left;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topbar .search-container {
-  float: right;
-  height: 40px;
-}
-
-.topbar input[type=text] {
-	width: 76%;
-  padding: 2px;
-  margin-top: 8px;
-  font-size: 17px;
-  border: 1px solid #FFF;
-  background-color: #b20838;
-}
-
-.topbar .search-container button {
-  float: right;
-  height: 26px;
-  margin-top: 8px;
-  margin-right: 17px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-}
-
-.topbar .search-container button:hover {
-  background: #ccc;
-}
 
 main {
 	min-height: 350px;
@@ -66,7 +16,6 @@ main {
 	margin-top: 1%;
 	padding: 2%;
 	background: #FFF;
-/*	overflow-x: scroll ;*/
 }
 
 .content {
@@ -85,6 +34,7 @@ main {
 }
 
 header h1 {
+	margin-top: 15px;
 	margin-left: 40px;
 	float: left;
 	font-family: EB Garamond, serif;
@@ -133,14 +83,38 @@ nav ul li a:hover {
 }
 
 button {
-	height: 19px;
+	width: 15%;
 	margin: 12px 8px 0 0;
 	padding: 0 7px;
-	color: #6b0623;
 	text-transform: uppercase;
 	font-size: 13px;
-	background-color: #eeb41e;
+	border-radius: 5px;
+	background-image: linear-gradient(yellow, #eeb41e);
 }
+
+button a {
+	display: block;
+	padding: 5%;
+	color: #6b0623;
+}
+
+button a:hover {
+	display: block;
+	color: #6b0623;
+}
+
+
+.submit {
+	width: 15%;
+	margin: 12px 8px 0 0;
+	padding: 2%;
+	text-transform: uppercase;
+	font-size: 13px;
+	border-radius: 5px;
+	background-image: linear-gradient(yellow, #eeb41e);
+	cursor: pointer;
+}
+
 
 .letter_grade {
 	min-height:150px;
@@ -155,9 +129,6 @@ button {
 	border-collapse: collapse;
 }
 
-.table-bordered > tbody > tr > td {
-	font-weight: 100;
-}
 
 #reset {
 	margin-top: 100px;
@@ -186,6 +157,13 @@ button {
 	color:red;
 }
 
+
+div.dataTables_wrapper {
+    width: 100%;
+    margin: 0 auto;
+    font-weight: normal;
+}
+
 input[type=text], input[type=email], select {
 	background-color: lightyellow;
 }
@@ -205,4 +183,76 @@ input[type=submit]:focus, input[type=reset]:focus {
 
 input[type=submit]:hover, input[type=reset]:hover {
 	background-color: lightgrey;
+}
+
+
+
+.new_student_form,
+.new_teacher_form,
+.new_class_form {
+	width: 55%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.info {
+	float: left;
+}
+
+.student_id,
+.teacher_id {
+	width: 25%;
+	margin-left: 0.25%;
+	margin-right: 0.25%;
+}
+
+
+.student_fName, .student_lName, 
+.teacher_fName, .teacher_lName {
+	width: 36.75%;
+	margin-left: 0.25%;
+	margin-right: 0.25%;
+}
+
+.student_street1, .student_street2, .student_phone, .student_email, 
+.teacher_street1, .teacher_street2, .teacher_phone, .teacher_email, 
+.class_term, .class_desc, .class_name{
+	width: 100%;
+}
+
+
+.student_city, .student_state, .student_zipcode,
+.teacher_city, .teacher_state, .teacher_zipcode {
+	width: 32.75%;
+	margin-left: 0.25%;
+	margin-right: 0.25%;
+}
+
+
+.enroll_teacher_form,
+.enroll_student_form {
+	width: 45%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.enroll_teacher_id,
+.enroll_student_id {
+	width: 15%;
+	margin: 1%;
+}
+
+.enroll_class_id, .enroll_teacher_role,
+.enroll_student_role {
+	width: 35%;
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+
+#result {
+	width: 45%;
+	margin-top: 2%;
+	margin-left: auto;
+	margin-right: auto;
 }

@@ -13,7 +13,5 @@
 		<li>
 			<a href="teachers.php">Teachers</a>
 		</li>
-		<li>
-			<a href="news.php">News</a>
-		</li>
+	</ul>
 </nav>

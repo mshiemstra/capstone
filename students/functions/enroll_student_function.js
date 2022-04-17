@@ -9,7 +9,7 @@ $('#enrollment_form').on('submit', function(e) {
   console.log(json);
   $.ajax({
     type: 'POST',
-    url: 'functions/enroll_student_process.php',
+    url: 'functions/enroll_student_function.php',
     dataType: 'json',
     data: json,
     contentType: 'application/json',
@@ -17,8 +17,8 @@ $('#enrollment_form').on('submit', function(e) {
         console.log(data);
         $('#result').text(data['message']);
         if(data['success']){
-          $('#person_id').val("");
-          $('#class_id').val("");          
+          $('#class_id').val("");
+          $('#role').val("");          
         }
       //  console.log('something');
     }

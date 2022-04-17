@@ -1,30 +1,14 @@
 <?php
 
-$class_id = $class_desc = $class_name = $class_fName = $class_lName = $class_term = "";
+$class_term = $class_desc = $class_name = "";
 
-$class_id_error = $class_desc_error = $class_name_error = $class_fName_error = $class_lName_error = $class_term_error = "";
+$class_term_error = $class_desc_error = $class_name_error = "";
 
 
 $valid = true;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
   
-
-	if(!preg_match("/^[0-9]*$/",$_POST['class_id'])) {
-	    $class_id_error = "Only numbers are allowed";
-	    $valid = false;
-	}
-
-	if(empty($_POST["class_id"])) {
-      $class_id_error = "class ID is required";
-      $valid = false;
-  }
-  else {
-      $class_id = $_POST["class_id"];
-  }
-
-
-
 
   if(empty($_POST["class_term"])) {
     $class_term_error = "Class term is required";
@@ -64,18 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $class_name = $_POST["class_name"]; 
   }
   
-
-
-
-  if(empty($_POST["person_id"])) {
-    $person_id_error = "Instructor's ID is required";
-    $valid = false;
-  }
-  else {
-    $person_id = $_POST["person_id"];
-  }
-  
-   
   
 
 if ($valid == true) {
@@ -89,7 +61,7 @@ if ($valid == true) {
       echo "<script type='text/javascript'>alert('class id already exists');</script>";
   }
   else { 
-      $sql = "INSERT INTO `class`(`class_id`, `class_term`, `class_desc`, `class_name`, `person_id`) ";
+      $sql = "INSERT INTO `class`(`class_term`, `class_desc`, `class_name`) ";
 
       if (mysqli_query($conn,$sql)) {
           echo "<script type='text/javascript'>window.top.location='classes.php';</script>";

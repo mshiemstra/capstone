@@ -19,7 +19,7 @@ $(document).ready(function(){
         console.log(data);
         $('#result').text(data['message']);
         if(data['success']){
-          $('#person_id').val("");
+          $('#teacher_id').val("");
           $('#teacher_fName').val("");
           $('#teacher_lName').val("");
           $('#teacher_street1').val("");

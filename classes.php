@@ -6,14 +6,6 @@
 
 	</head>
 	<body>
-		<section class="topbar">
-		  <div class="search-container">
-		    <form action="/action_page.php">
-		      <input type="text" placeholder="Search.." name="search">
-		      <button type="submit"><i class="fa fa-search"></i></button>
-		    </form>
-		  </div>
-		 </section>
 		<header class="header">
 			<h1>
 				<a href="index.php"><img id="logo" src="images/logo.png"></a>
@@ -22,27 +14,39 @@
 		</header>
 		<main>
 
-			<table class="table table-bordered">
+			<table class="nowrap" id="class_list">
 				<thead>
-					<tr class="th">					
-						<td>Class ID</td>
-						<td>Term</td>
-						<td>Class Description</td>
-						<td>Class Name</td>
-						<td>Instructor First Name</td>
-						<td>Instructor Last Name</td>
-						<td># of Students</td>				
+					<tr class="th">	
+						<th></th>				
+						<th>Class ID</th>
+						<th>Term</th>
+						<th>Class Description</th>
+						<th>Class Name</th>
+						<th>Instructor First Name</th>
+						<th>Instructor Last Name</th>
+						<th># of Students</th>				
 					</tr>
 				</thead>
 				<tbody>
 					<?php
 
-						$sql = "SELECT C.class_id, C.class_term, C.class_desc, C.class_name, CI.person_fName AS instructor_fName, CI.person_lName AS instructor_lName, COUNT(*) AS student_count
-							FROM class AS C, class_instructors AS CI, enrollment AS E
-							WHERE C.class_id = E.class_id
-							AND E.person_id = CI.person_id 
-							GROUP BY C.class_id ASC
-						";
+						$sql = "SELECT C.class_id, 
+								       C.class_term, 
+								       C.class_desc, 
+								       C.class_name,
+								       CI.person_fName AS instructor_fName,
+								       CI.person_lName AS instructor_lName,
+								       COUNT(*) AS student_count
+								FROM class AS C,
+								     enrollment AS E,
+								     class_instructors AS CI,
+								     person AS P
+								WHERE C.class_id = E.class_id
+								AND CI.class_id = E.class_id
+								AND E.person_id = P.person_id
+								AND role = 'S'
+								GROUP BY C.class_id ASC
+								";
 			
 						$result = $conn->query($sql);
 

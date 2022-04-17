@@ -6,14 +6,6 @@
 
 	</head>
 	<body>
-		<section class="topbar">
-		  <div class="search-container">
-		    <form action="/action_page.php">
-		      <input type="text" placeholder="Search.." name="search">
-		      <button type="submit"><i class="fa fa-search"></i></button>
-		    </form>
-		  </div>
-		 </section>
 		<header class="header">
 			<h1>
 				<a href="index.php"><img id="logo" src="../images/logo.png"></a>
@@ -21,13 +13,14 @@
 			<?php include "includes/class_navbar.php" ?>
 		</header>
 		<main>
-			<table class="table table-bordered">
+			<table id="class_info_list" class="nowrap">
 				<thead>
 					<tr class="th">
-						<td></td>					
-						<td>Student ID</td>
-						<td>First Name</td>
-						<td>Last Name</td>				
+						<th></th>					
+						<th>Student ID</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th></th>			
 					</tr>
 				</thead>
 				<tbody>
@@ -42,7 +35,7 @@
 							E.person_id = P.person_id 
 						AND E.class_id = $id
 						AND E.role = 'S' 
-						GROUP BY person_lName ASC
+						ORDER BY person_lName ASC
 							";
 
 					$result = $conn->query($sql);
@@ -61,16 +54,20 @@
 					  }
 					} 
 					else {
-					  echo "0 results";
+					 // echo "0 results";
 					}
 
-					$conn->close();
 
+					$conn->close();
 				//	echo 'something';
 				//	echo $sql;
 				?>
 				</tbody>			
 			</table>
+			<section id="sub-button">
+				<button id="enroll_student"><a href="../students/enroll_student2.php?id=<?php echo $id?>">Enroll Student</a></button>
+			</section>
+
 		</main>
 	</body>
 </html>

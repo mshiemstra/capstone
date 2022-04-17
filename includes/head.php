@@ -4,12 +4,17 @@
 			
 			<title>Grade Book</title>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-			
+			<script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+			<script src="functions/datatables.js"></script>
+
+			<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+			<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
+			<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/dataTables.foundation.min.css">
+
 			<link rel="stylesheet" href="https://use.typekit.net/uho4dic.css">
 			<link rel="stylesheet" type="text/css" href="css/styles.css">
 			<link rel="stylesheet" type="text/css" href="css/student_form.css">
 
+			
 			<?php include 'db.php'; ?>

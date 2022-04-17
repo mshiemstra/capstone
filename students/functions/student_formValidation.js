@@ -5,7 +5,7 @@ $(document).ready(function(){
     var student_id = $("#student_id").text();
     var student_idTrim = $.trim(student_id);
 
-    var student_fNmae = $("#student_fName").text();
+    var student_fName = $("#student_fName").text();
     var student_fNameTrim = $.trim(student_fName);
 
     var student_lName = $("#student_lName").text();
@@ -53,7 +53,7 @@ $(document).ready(function(){
       if(student_id == "" || student_id == null || student_id == "null" || student_id == undefined || student_id == "undefined" || res == null) {
        
 
-        $('#student_error1').html('Please enter a valid Student ID');
+        $('#student_error1').html('Missing ID');
 
         return validForm = false;
       }
@@ -77,7 +77,7 @@ $(document).ready(function(){
       if(student_fName == "" || student_fName == null || student_fName == "null" || student_fName == undefined || student_fName == "undefined" || res == null) {
        
 
-        $('#student_error2').html('Please enter a valid first name');
+        $('#student_error2').html('Missing name');
 
         return validForm = false;
       }
@@ -101,7 +101,7 @@ $(document).ready(function(){
       if(student_lName == "" || student_lName == null || student_lName == "null" || student_lName == undefined || student_lName == "undefined" || res == null) {
        
 
-        $('#student_error3').html('Please enter a valid last name');
+        $('#student_error3').html('Missing name');
 
         return validForm = false;
       }
@@ -125,7 +125,7 @@ $(document).ready(function(){
       if(student_street1 == "" || student_street1 == null || student_street1 == "null" || student_street1 == undefined || student_street1 == "undefined" || res == null) {
        
 
-        $('#student_error4').html('Please enter a valid address');
+        $('#student_error4').html('Missing address');
 
         return validForm = false;
       }
@@ -150,7 +150,7 @@ $(document).ready(function(){
       if(res == null) {
        
 
-        $('#student_error5').html('Please enter a valid address');
+        $('#student_error5').html('Invalid Format');
 
         return validForm = false;
       }
@@ -175,7 +175,7 @@ $(document).ready(function(){
       if(student_city == "" || student_city == null || student_city == "null" || student_city == undefined || student_city == "undefined" || res == null) {
        
 
-        $('#student_error6').html('Please enter a valid City');
+        $('#student_error6').html('Missing City');
 
         return validForm = false;
       }
@@ -195,7 +195,7 @@ $(document).ready(function(){
       if(student_state == "") {
        
 
-        $('#student_error7').html('Please select a state');
+        $('#student_error7').html('Missing state');
 
         return validForm = false;
       }
@@ -220,7 +220,7 @@ $(document).ready(function(){
       if(student_zipcode == "" || student_zipcode == null || student_zipcode == "null" || student_zipcode == undefined || student_zipcode == "undefined" || res == null) {
        
 
-        $('#student_error8').html('Please enter a valid zipcode');
+        $('#student_error8').html('Missing zipcode');
 
         return validForm = false;
       }
@@ -245,7 +245,7 @@ $(document).ready(function(){
       if(student_phone == "" || student_phone == null || student_phone == "null" || student_phone == undefined || student_phone == "undefined" || res == null) {
        
 
-        $('#student_error9').html('Please enter a valid Phone Number');
+        $('#student_error9').html('Missing Phone Number');
 
         return validForm = false;
       }
@@ -268,7 +268,7 @@ $(document).ready(function(){
       if(student_email == "" || student_email == null || student_email == "null" || student_email == undefined || student_email == "undefined" || res == null) {
        
 
-        $('#student_error10').html('Please enter a valid Phone Number');
+        $('#student_error10').html('Missing Email Address');
 
         return validForm = false;
       }

@@ -6,15 +6,6 @@
 
 	</head>
 	<body>
-		<section class="topbar">
-		  <div class="search-container">
-		    <form action="/action_page.php">
-		      <input type="text" placeholder="Search.." name="search">
-		      <button type="submit"><i class="fa fa-search"></i></button>
-		    <!--  <script src="student/functions/student_formValidation.js"></script> -->
-		    </form>
-		  </div>
-		 </section>
 		<header class="header">
 			<h1>
 				<a href="index.php"><img id="logo" src="images/logo.png"></a>
@@ -23,26 +14,37 @@
 		</header>
 		<main>
 
-			<table class="table table-bordered" id="student_list">
+			<table id="student_list" class="nowrap">
 				<thead>
-					<tr class="th">	
-						<td></td>									
-						<td>Student ID</td>
-						<td>First Name</td>
-						<td>Last Name</td>
-						<td>Street Address</td>
-						<td>Bldg/Ste/Lot</td>
-						<td>City</td>
-						<td>State</td>
-						<td>Zipcode</td>
-						<td>Phone Number</td>
-						<td>Email Address</td>
-						<td></td>
+					<tr>	
+						<th></th>									
+						<th>Student ID</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Street Address</th>
+						<th>Bldg/Ste/Lot</th>
+						<th>City</th>
+						<th>State</th>
+						<th>Zipcode</th>
+						<th>Phone Number</th>
+						<th>Email Address</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php
-						$sql = "SELECT * FROM person WHERE person_role = 'S' ORDER BY person_id ASC";
+
+
+						if(isset($_GET['id'])){
+							$id = mysqli_real_escape_string($conn, $_GET['id']);
+
+							$sql = "SELECT * FROM person WHERE person_role = 'S' AND person_id = '$id' ORDER BY person_id ASC";
+						}
+						else {
+
+							$sql = "SELECT * FROM person WHERE person_role = 'S' ORDER BY person_id ASC";
+						}
+						
 						$result = $conn->query($sql);
 
 						if ($result->num_rows > 0) {				  

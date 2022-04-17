@@ -2,7 +2,7 @@ $(document).ready(function(){
   //alert('ready');
 
   function trimString() {
-    var teacher_id = $("#person_id").text();
+    var teacher_id = $("#teacher_id").text();
     var teacher_idTrim = $.trim(teacher_id);
 
     var teacher_fNmae = $("#teacher_fName").text();
@@ -31,7 +31,7 @@ $(document).ready(function(){
 
 
 
-    $("#person_id").html(teacher_idTrim);
+    $("#teacher_id").html(teacher_idTrim);
     $("#teacher_fName").html(teacher_fNameTrim);
     $("#teacher_lName").html(teacher_lNameTrim);
     $("#teacher_street1").html(teacher_address1Trim);
@@ -46,14 +46,14 @@ $(document).ready(function(){
 
   function teacher_idNumber() {
    
-      let teacher_id = $("#pereson_id").val();      
+      let teacher_id = $("#teacher_id").val();      
       let patt = new RegExp(/^[0-9]*$/);
       let res = patt.exec(teacher_id);
 
       if(teacher_id == "" || teacher_id == null || teacher_id == "null" || teacher_id == undefined || teacher_id == "undefined" || res == null) {
        
 
-        $('#teacher_error1').html('Please enter a valid teacher ID');
+        $('#teacher_error1').html('Missing ID');
 
         return validForm = false;
       }
@@ -77,7 +77,7 @@ $(document).ready(function(){
       if(teacher_fName == "" || teacher_fName == null || teacher_fName == "null" || teacher_fName == undefined || teacher_fName == "undefined" || res == null) {
        
 
-        $('#teacher_error2').html('Please enter a valid first name');
+        $('#teacher_error2').html('Missing name');
 
         return validForm = false;
       }
@@ -101,7 +101,7 @@ $(document).ready(function(){
       if(teacher_lName == "" || teacher_lName == null || teacher_lName == "null" || teacher_lName == undefined || teacher_lName == "undefined" || res == null) {
        
 
-        $('#teacher_error3').html('Please enter a valid last name');
+        $('#teacher_error3').html('Missing last name');
 
         return validForm = false;
       }
@@ -125,7 +125,7 @@ $(document).ready(function(){
       if(teacher_street1 == "" || teacher_street1 == null || teacher_street1 == "null" || teacher_street1 == undefined || teacher_street1 == "undefined" || res == null) {
        
 
-        $('#teacher_error4').html('Please enter a valid address');
+        $('#teacher_error4').html('Missing address');
 
         return validForm = false;
       }
@@ -150,7 +150,7 @@ $(document).ready(function(){
       if(res == null) {
        
 
-        $('#teacher_error5').html('Please enter a valid address');
+        $('#teacher_error5').html('Invalid Format');
 
         return validForm = false;
       }
@@ -175,7 +175,7 @@ $(document).ready(function(){
       if(teacher_city == "" || teacher_city == null || teacher_city == "null" || teacher_city == undefined || teacher_city == "undefined" || res == null) {
        
 
-        $('#teacher_error6').html('Please enter a valid City');
+        $('#teacher_error6').html('Missing City');
 
         return validForm = false;
       }
@@ -195,7 +195,7 @@ $(document).ready(function(){
       if(teacher_state == "") {
        
 
-        $('#teacher_error7').html('Please select a state');
+        $('#teacher_error7').html('Missing state');
 
         return validForm = false;
       }
@@ -220,7 +220,7 @@ $(document).ready(function(){
       if(teacher_zipcode == "" || teacher_zipcode == null || teacher_zipcode == "null" || teacher_zipcode == undefined || teacher_zipcode == "undefined" || res == null) {
        
 
-        $('#teacher_error8').html('Please enter a valid zipcode');
+        $('#teacher_error8').html('Missing zipcode');
 
         return validForm = false;
       }
@@ -245,7 +245,7 @@ $(document).ready(function(){
       if(teacher_phone == "" || teacher_phone == null || teacher_phone == "null" || teacher_phone == undefined || teacher_phone == "undefined" || res == null) {
        
 
-        $('#teacher_error9').html('Please enter a valid Phone Number');
+        $('#teacher_error9').html('Missing Phone Number');
 
         return validForm = false;
       }
@@ -268,7 +268,7 @@ $(document).ready(function(){
       if(teacher_email == "" || teacher_email == null || teacher_email == "null" || teacher_email == undefined || teacher_email == "undefined" || res == null) {
        
 
-        $('#teacher_error10').html('Please enter a valid Phone Number');
+        $('#teacher_error10').html('Missing Email Address');
 
         return validForm = false;
       }
@@ -284,7 +284,7 @@ $(document).ready(function(){
 
 
 
-  $('#person_id').blur(teacher_idNumber);
+  $('#teacher_id').blur(teacher_idNumber);
   $('#teacher_fName').blur(teacher_firstname);
   $('#teacher_lName').blur(teacher_lastname);
   $('#teacher_street1').blur(teacher_addressOne);
@@ -310,7 +310,7 @@ $(document).ready(function(){
 
 
     if(validForm == true){
-      var teacher_id = $('#person_id').val();
+      var teacher_id = $('#teacher_id').val();
       var teacher_fName = $('#teacher_fName').val();
       var teacher_lName = $('#teacher_lName').val();
       var teacher_street1 = $('#teacher_street1').val();
