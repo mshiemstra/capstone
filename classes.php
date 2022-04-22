@@ -44,7 +44,7 @@
 								WHERE C.class_id = E.class_id
 								AND CI.class_id = E.class_id
 								AND E.person_id = P.person_id
-								AND role = 'S'
+								AND P.person_role = 'S'
 								GROUP BY C.class_id ASC
 								";
 			
@@ -70,7 +70,7 @@
 			</table>
 
 			<button id="new_student"><a href="classes/new_class.php">Add Class</a></button>
-
 		</main>
+		<?php include 'includes/footer.php' ?>
 	</body>
 </html>

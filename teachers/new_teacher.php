@@ -13,32 +13,46 @@
 		<main>
 			<section class="new_teacher_form">
 				<form method="post" id="new_teacher_form" class="form-horizontal" action="javascript:void(0)">
-			        <div class="info teacher_id">
-				      	<label>Teacher ID <span class="required">*</span><span id="teacher_error1"></span></label>				      	
-						<input type="text" id="teacher_id" name="teacher_id" placeholder="######">
-					</div>
+					<input type="hidden" id="person_id" name="person_id" value="">
+					
 					<div class="info teacher_fName">
-				      	<label>Teacher's Full Name <span class="required">*</span><span id="teacher_error2"></span></label>
+				      	<label>Teacher's Full Name 
+				      		<span class="required">*</span>
+				      		<span id="teacher_error2"></span>
+				      	</label>
 						<input type="text" id="teacher_fName" name="teacher_fName" placeholder="First">
 					</div>
 					<div class="info teacher_lName">
-					    <label>&nbsp;<span id="teacher_error3"></span></label>
+					    <label>&nbsp;
+					    	<span id="teacher_error3"></span>
+					    </label>
 						<input type="text" id="teacher_lName" name="teacher_lName" placeholder="Last">
 					</div>				
 					<div class="info teacher_street1">
-					    <label>Address <span class="required">*</span><span id="teacher_error4"></span></label>
+					    <label>Address 
+					    	<span class="required">*</span>
+					    	<span id="teacher_error4"></span>
+					    </label>
 						<input type="text" id="teacher_street1" name="teacher_street1" placeholder="123 Main St.">
 					</div>
 			        <div class="info teacher_street2">
-					    <label>Address 2<span id="teacher_error5"></span></label>
+					    <label>Address 2
+					    	<span id="teacher_error5"></span>
+					    </label>
 						<input type="text" id="teacher_street2" name="teacher_street2" placeholder="Bldg/Ste/Lot #">	
 					</div>
 					<div class="info teacher_city">
-					    <label>City <span class="required">*</span><span id="teacher_error6"></span></label>
+					    <label>City 
+					    	<span class="required">*</span>
+					    	<span id="teacher_error6"></span>
+					    </label>
 						<input type="text" id="teacher_city" name="teacher_city" >
 					</div>
 					<div class="info teacher_state">
-				      	<label>State <span class="required">*</span><span id="teacher_error7"></span></label>
+				      	<label>State 
+				      		<span class="required">*</span>
+				      		<span id="teacher_error7"></span>
+				      	</label>
 		                <select id="teacher_state" name="teacher_state" >
 		                    <option value="">--- Select ---</option>
 		                    <option value="AL">Alabama</option>
@@ -94,15 +108,24 @@
 		                </select>
 					</div>
 					<div class="info teacher_zipcode">
-				    	<label>Zipcode <span class="required">*</span><span id="teacher_error8"></span></label>
+				    	<label>Zipcode 
+				    		<span class="required">*</span>
+				    		<span id="teacher_error8"></span>
+				    	</label>
 						<input type="text" id="teacher_zipcode" name="teacher_zipcode" placeholder="#####">
 					</div>
 					<div class="info teacher_phone">
-				    	<label>Phone Number <span class="required">*</span><span id="teacher_error9"></span></label>
+				    	<label>Phone Number 
+				    		<span class="required">*</span>
+				    		<span id="teacher_error9"></span>
+				    	</label>
 						<input type="text" maxlength="13" id="teacher_phone" name="teacher_phone" placeholder="(###)###-####">
 					</div>
 					<div class="info teacher_email">
-				    	<label>Email Address <span class="required">*</span><span id="teacher_error10"></span></label>
+				    	<label>Email Address 
+				    		<span class="required">*</span>
+				    		<span id="teacher_error10"></span>
+				    	</label>
 						<input type="email" id="teacher_email" name="teacher_email" placeholder="name@example.com">
 					</div>
 					<input type="submit" name="submit" value="Submit">
@@ -110,5 +133,6 @@
 				</form>
 			</section>
 		</main>
+		<?php include 'includes/teacher_footer.php' ?>
 	</body>
 </html>

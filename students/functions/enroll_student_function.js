@@ -14,13 +14,16 @@ $('#enrollment_form').on('submit', function(e) {
     data: json,
     contentType: 'application/json',
     success: function(data) {
-        console.log(data);
-        $('#result').text(data['message']);
-        if(data['success']){
-          $('#class_id').val("");
-          $('#role').val("");          
-        }
-      //  console.log('something');
-    }
+      console.log(data);
+      $('#result').text(data['message']);
+      if(data['success']){
+        $('#class_id').val("");
+        $('#role').val("");          
+      }
+    }/*,
+
+    fail: function() {
+      console.log('error sending data');       
+    } */
   });
 });

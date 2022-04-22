@@ -35,8 +35,6 @@ if($result->num_rows == 1) {
 
 }
 
-echo $sql;
-
 $sql = "INSERT INTO enrollment VALUES ($class_id, $person_id, '$role')";
 
 if (mysqli_query($conn,$sql)) {

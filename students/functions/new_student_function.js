@@ -33,4 +33,35 @@ $(document).ready(function(){
       }
     });
   });
+  console.log('Another String');
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  console.log(urlParams.get('id'));
+  if(urlParams.get('id')) {
+    var id = urlParams.get('id');
+    const json = {"id":id};
+    console.log(json);
+    console.log('Yet Another String');
+    $.ajax({
+      type: 'POST',
+      url: 'functions/get_student.php',
+      dataType: 'json',
+      data: JSON.stringify(json),
+      contentType: 'application/json',
+      success: function(data) {
+        console.log(data);
+        console.log('A String');
+        $('#person_id').val(data['person_id']);
+        $('#student_fName').val(data['person_fName']);
+        $('#student_lName').val(data['person_lName']);
+        $('#student_street1').val(data['person_street1']);
+        $('#student_street2').val(data['person_street2']);
+        $('#student_city').val(data['person_city']);
+        $('#student_state').val(data['person_state']);
+        $('#student_zipcode').val(data['person_zipcode']);
+        $('#student_phone').val(data['person_phone']);
+        $('#student_email').val(data['person_email']);
+      }
+    });
+  }
 });

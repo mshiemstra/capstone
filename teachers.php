@@ -40,8 +40,9 @@
 						  while($row = mysqli_fetch_array($result)) {
 						    echo "<tr>";
 						    $select = "teachers/teacher_info.php?id=" . $row['person_id'];
-						    echo "<td><a id='select' href='$select'>Select</a></td>";
-
+						    $edit = "teachers/new_teacher.php?id=" . $row['person_id'];
+						    echo "<td><a id='select' href='$select'>Select</a> ";
+						    echo "<a id='select' href='$edit'>Edit</a></td>";
 						    echo "<td id='teacher_id'>" . $row["person_id"] . "</td><td>" . $row["person_fName"] . "</td><td>" . $row["person_lName"] . "</td><td>" . $row["person_street1"] . "</td><td>" . $row["person_street2"] . "</td><td>" . $row["person_city"] . "</td><td>" . $row["person_state"] . "</td><td>" . $row["person_zipcode"] . "</td><td>" . $row["person_phone"] . "</td><td>" . $row["person_email"] . "</td>";
 
 						    $delete = "teachers/delete_teacher.php?id=" . $row['person_id'];
@@ -58,9 +59,7 @@
 			</table>
 
 			<button id="new_teacher"><a href="teachers/new_teacher.php">Add teacher</a></button>
-			
-
 		</main>
-		
+		<?php include 'includes/footer.php' ?>
 	</body>
 </html>

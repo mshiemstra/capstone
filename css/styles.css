@@ -11,7 +11,7 @@ body, .content {
 
 
 main {
-	min-height: 350px;
+	min-height: 420px;
 	width: 100%;
 	margin-top: 1%;
 	padding: 2%;
@@ -41,6 +41,10 @@ header h1 {
 	text-transform: uppercase;
 	line-height: 31px;
 	font-stretch: ultra-condensed!important;
+}
+
+p {
+	font-weight: normal;
 }
 
 #logo {
@@ -209,7 +213,7 @@ input[type=submit]:hover, input[type=reset]:hover {
 
 .student_fName, .student_lName, 
 .teacher_fName, .teacher_lName {
-	width: 36.75%;
+	width: 49.50%;
 	margin-left: 0.25%;
 	margin-right: 0.25%;
 }
@@ -255,4 +259,18 @@ input[type=submit]:hover, input[type=reset]:hover {
 	margin-top: 2%;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+footer {
+	color: #FFF;
+}
+
+footer p {
+	margin-top: 1%;
+	margin-left: 1%;
+}
+
+#copywrite {
+	color: #FFF;
+	text-decoration: underline;
 }

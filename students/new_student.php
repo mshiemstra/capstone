@@ -13,32 +13,46 @@
 		<main>
 			<section class="new_student_form">
 				<form method="post" id="new_student_form" class="form-horizontal" action="javascript:void(0)">
-			        <div class="info student_id">
-				      	<label>Student ID <span class="required">*</span><span id="student_error1"></span></label>				      	
-						<input type="text" id="student_id" name="student_id" placeholder="######">
-					</div>
+					<input type="hidden" id="person_id" name="person_id" value="">
+					
 					<div class="info student_fName">
-				      	<label>Student's Full Name <span class="required">*</span><span id="student_error2"></span></label>
+						<label>Student's Full Name 
+				      		<span class="required">*</span>
+				      		<span id="student_error2"></span>
+				      	</label>
 						<input type="text" id="student_fName" name="student_fName" placeholder="First">
 					</div>
 					<div class="info student_lName">
-					    <label>&nbsp;<span id="student_error3"></span></label>
+					    <label>&nbsp;
+					    	<span id="student_error3"></span>
+					    </label>
 						<input type="text" id="student_lName" name="student_lName" placeholder="Last">
 					</div>				
 					<div class="info student_street1">
-					    <label>Address <span class="required">*</span><span id="student_error4"></span></label>
+					    <label>Address 
+					    	<span class="required">*</span>
+					    	<span id="student_error4"></span>
+					    </label>
 						<input type="text" id="student_street1" name="student_street1" placeholder="123 Main St.">
 					</div>
 			        <div class="info student_street2">
-					    <label>Address 2<span id="student_error5"></span></label>
+					    <label>Address 2
+					    	<span id="student_error5"></span>
+					    </label>
 						<input type="text" id="student_street2" name="student_street2" placeholder="Bldg/Ste/Lot #">	
 					</div>
 					<div class="info student_city">
-					    <label>City <span class="required">*</span><span id="student_error6"></span></label>
+					    <label>City 
+					    	<span class="required">*</span>
+					    	<span id="student_error6"></span>
+					    </label>
 						<input type="text" id="student_city" name="student_city" >
 					</div>
 					<div class="info student_state">
-				      	<label>State <span class="required">*</span><span id="student_error7"></span></label>
+				      	<label>State 
+				      		<span class="required">*</span>
+				      		<span id="student_error7"></span>
+				      	</label>
 		                <select id="student_state" name="student_state" >
 		                    <option value="">--- Select ---</option>
 		                    <option value="AL">Alabama</option>
@@ -94,15 +108,24 @@
 		                </select>
 					</div>
 					<div class="info student_zipcode">
-				    	<label>Zipcode <span class="required">*</span><span id="student_error8"></span></label>
+				    	<label>Zipcode 
+				    		<span class="required">*</span>
+				    		<span id="student_error8"></span>
+				    	</label>
 						<input type="text" id="student_zipcode" name="student_zipcode" placeholder="#####">
 					</div>
 					<div class="info student_phone">
-				    	<label>Phone Number <span class="required">*</span><span id="student_error9"></span></label>
+				    	<label>Phone Number 
+				    		<span class="required">*</span>
+				    		<span id="student_error9"></span>
+				    	</label>
 						<input type="text" maxlength="13" id="student_phone" name="student_phone" placeholder="(###)###-####">
 					</div>
 					<div class="info student_email">
-				    	<label>Email Address <span class="required">*</span><span id="student_error10"></span></label>
+				    	<label>Email Address 
+				    		<span class="required">*</span>
+				    		<span id="student_error10"></span>
+				    	</label>
 						<input type="email" id="student_email" name="student_email" placeholder="name@example.com">
 					</div>
 					<input type="submit" name="submit" value="Submit">
@@ -110,5 +133,6 @@
 				</form>
 			</section>
 		</main>
+		<?php include 'includes/student_footer.php' ?>
 	</body>
 </html>

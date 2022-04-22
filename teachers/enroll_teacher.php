@@ -34,7 +34,7 @@
 				&nbsp;
 			</div>
 			<script src="functions/enroll_teacher_function.js"></script>
-
 		</main>
+		<?php include 'includes/teacher_footer.php' ?>
 	</body>
 </html>

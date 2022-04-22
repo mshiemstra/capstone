@@ -4,56 +4,44 @@ include '../../includes/db.php';
 
 $data = json_decode(file_get_contents('php://input'), true);
 
-$student_id = $data['student_id'];
-$student_fName = $data['student_fName'];
-$student_lName = $data['student_lName'];
-$student_street1 = $data['student_street1'];
-$student_street2 = $data['student_street2'];
-$student_city = $data['student_city'];
-$student_state = $data['student_state'];
-$student_zipcode = $data['student_zipcode'];
-$student_phone = $data['student_phone'];
-$student_email = $data['student_email'];
+$person_id = $data['person_id'];
+$person_fName = $data['student_fName'];
+$person_lName = $data['student_lName'];
+$person_street1 = $data['student_street1'];
+$person_street2 = $data['student_street2'];
+$person_city = $data['student_city'];
+$person_state = $data['student_state'];
+$person_zipcode = $data['student_zipcode'];
+$person_phone = $data['student_phone'];
+$person_email = $data['student_email'];
 
 
-$student_id = mysqli_real_escape_string($conn, $student_id);
-$student_fName = mysqli_real_escape_string($conn, $student_fName);
-$student_lName = mysqli_real_escape_string($conn, $student_lName);
-$student_street1 = mysqli_real_escape_string($conn, $student_street1);
-$student_street2 = mysqli_real_escape_string($conn, $student_street2);
-$student_city = mysqli_real_escape_string($conn, $student_city);
-$student_state = mysqli_real_escape_string($conn, $student_state);
-$student_zipcode = mysqli_real_escape_string($conn, $student_zipcode);
-$student_phone = mysqli_real_escape_string($conn, $student_phone);
-$student_email = mysqli_real_escape_string($conn, $student_email);
+$person_id = mysqli_real_escape_string($conn, $person_id);
+$person_fName = mysqli_real_escape_string($conn, $person_fName);
+$person_lName = mysqli_real_escape_string($conn, $person_lName);
+$person_street1 = mysqli_real_escape_string($conn, $person_street1);
+$person_street2 = mysqli_real_escape_string($conn, $person_street2);
+$person_city = mysqli_real_escape_string($conn, $person_city);
+$person_state = mysqli_real_escape_string($conn, $person_state);
+$person_zipcode = mysqli_real_escape_string($conn, $person_zipcode);
+$person_phone = mysqli_real_escape_string($conn, $person_phone);
+$person_email = mysqli_real_escape_string($conn, $person_email);
 
-
-
-
-
-$sql = "SELECT * FROM person WHERE person_id = $student_id";
-$result = $conn->query($sql);
-
-if($result->num_rows == 1) {
-	$message = 'student has already been added.';
-	echo "{\"message\":\"$message\", \"success\":false}";
-	exit;
+if($person_id){
+  $sql = "UPDATE person SET person_fName = '$person_fName', person_lName = '$person_lName', person_street1 = '$person_street1', person_street2 = '$person_street2', person_city = '$person_city', person_state = '$person_state', person_zipcode = '$person_zipcode', person_phone = '$person_phone', person_email = '$person_email' WHERE person_id = $person_id";  
 }
 else {
-
-	$sql = "INSERT INTO person VALUES ($student_id, '$student_fName', '$student_lName', '$student_street1', '$student_street2', '$student_city', '$student_state', '$student_zipcode', '$student_phone', '$student_email', 'S')";
-
-	if (mysqli_query($conn,$sql)) {
-	   $message = 'Record Added';
-	   echo "{\"message\":\"$message\", \"success\":true}";
-	}
-	else {
-		$message = "error adding user in database $sql";
-		echo "{\"message\":\"$message\", \"success\":false}";
-	}
+  $sql = "INSERT INTO person VALUES (person_id, '$person_fName', '$person_lName', '$person_street1', '$person_street2', '$person_city', '$person_state', '$person_zipcode', '$person_phone', '$person_email', 'S')";  
 }
 
-
+if (mysqli_query($conn,$sql)) {
+   $message = 'New student has been created';
+   echo "{\"message\":\"$message\", \"success\":true}";
+}
+else {
+  $message = "error adding user in database $sql";
+  echo "{\"message\":\"$message\", \"success\":false}";
+}
 
 
 ?>

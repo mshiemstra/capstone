@@ -35,5 +35,6 @@
 			</div>
 			<script src="functions/enroll_student_function.js"></script>
 		</main>
+		<?php include 'includes/student_footer.php' ?>
 	</body>
 </html>

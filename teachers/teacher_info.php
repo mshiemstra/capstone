@@ -56,5 +56,6 @@
 				<button id="enroll_teacher"><a href="enroll_teacher.php?id=<?php echo $id?>">Enroll Teacher</a></button>
 			</section>
 		</main>
+		<?php include 'includes/teacher_footer.php' ?>
 	</body>
 </html>

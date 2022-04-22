@@ -44,8 +44,6 @@
 						GROUP BY class_name ASC
 							";
 
-
-
 		
 					$result = $conn->query($sql);
 					$student_id = '0';
@@ -60,13 +58,10 @@
 					  }
 					} 
 					else {
-					 // echo "0 results";
+
 					}
 
 					$conn->close();
-
-				//	echo 'something';
-				//	echo $sql;
 				?>
 				</tbody>			
 			</table>
@@ -74,5 +69,6 @@
 				<button id="enroll_student"><a href="enroll_student.php?id=<?php echo $id?>">Enroll Student</a></button>
 			</section>
 		</main>
+		<?php include 'includes/student_footer.php' ?>
 	</body>
 </html>

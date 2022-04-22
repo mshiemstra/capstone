@@ -2,7 +2,7 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<meta name="author" content="Matt Hiemstra">
 			
-			<title>Grade Book</title>
+			<title>CIS Capstone - Dashboard</title>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 			<script src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 			<script src="functions/datatables.js"></script>
